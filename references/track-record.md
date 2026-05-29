@@ -48,7 +48,9 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 
 | status_id | date (UTC) | post (short) | tier + amplifiers | implicated ticker(s) | predicted dir / magnitude / durability | T+1d actual | T+1w actual | hit? |
 |---|---|---|---|---|---|---|---|---|
-| 38852 | 2026-05-29 14:51 | [Hormuz open; naval blockade lifted; Iran final determination pending](https://trumpstruth.org/statuses/38852) | Tier 3 energy/geopolitical de-escalation; amps: Hormuz/shipping, blockade lifted, repeated Iran thread | XOM/CVX/OXY/COP and LMT/RTX down; SPY/IWM risk-on up | Energy/defense -0.5% to -2%; broad risk-on small up; fragile intraday to 1d |  |  | pending |
+| 38873 | 2026-05-29 19:05 | [TrumpRx.gov link; MFN prescription-pricing reset](https://trumpstruth.org/statuses/38873) | Tier 2 healthcare/drug-pricing policy; amps: official gov site, MFN/price-control language, intraday post | LLY/NVO/PFE/MRK/JNJ down; PBM/pharmacy impact mixed | Pharma/GLP-1 pricing basket down 0.5% to 3%; medium durability if MFN implementation holds, otherwise headline fade |  |  | pending |
+| 38858 | 2026-05-29 18:02 | [EU trade-deal enforcement / auto-tariff pressure](https://trumpstruth.org/statuses/38858) | Tier 2B tariff/trade enforcement; amps: policy he controls, auto-tariff deadline, official ambassador article | STLA/VWAGY/BMWYY/MBGYY down; GM/F/TSLA relative up | EU-auto ADRs down 0.5% to 2%; US domestic autos relative up small; fragile until July 4 deadline |  |  | pending |
+| 38852 | 2026-05-29 14:51 | [Hormuz open; naval blockade lifted; Iran final determination pending](https://trumpstruth.org/statuses/38852) | Tier 3 energy/geopolitical de-escalation; amps: Hormuz/shipping, blockade lifted, repeated Iran thread | XOM/CVX/OXY/COP and LMT/RTX down; SPY/IWM risk-on up | Energy/defense -0.5% to -2%; broad risk-on small up; fragile intraday to 1d | Energy/defense basket avg -0.7%, med -1.0%; SPY +0.3%, IWM -0.6% on 2026-05-29 vs 2026-05-28 close; Yahoo Finance chart API fetched 2026-05-29T20:06Z |  | hit (energy/defense; broad mixed) |
 | 38838 | 2026-05-27 22:54 | [Armenia route to help American energy companies access Central Asia](https://trumpstruth.org/statuses/38838) | Tier 3 energy corridor; amps: named sector, policy corridor, no named public company | XOM/CVX/LNG/ET/KMI | Up 0.5% to 2%; weak durability unless a concrete project or contract follows | Basket avg -0.3%, med -0.6% on 2026-05-28 vs 2026-05-27 close; Yahoo Finance chart API fetched 2026-05-29T17:07Z |  | miss |
 | 38837 | 2026-05-27 22:42 | [Pro-crypto market-structure pledge and "Crypto Capital" framing](https://trumpstruth.org/statuses/38837) | Tier 2C crypto; amps: policy he controls, repeated theme, after-close, personal/family crypto overlap | COIN/MSTR/HOOD/MARA/RIOT/BTC-USD | Up 2% to 5%; low durability and fade-prone | Basket avg +2.4%, med +0.9% on 2026-05-28 vs 2026-05-27 close; Yahoo Finance chart API fetched 2026-05-29T17:07Z |  | hit |
 | 38814 | 2026-05-26 21:19 | [CFTC prediction-market authority and crypto protection](https://trumpstruth.org/statuses/38814) | Tier 2C crypto/prediction markets; amps: CFTC policy, repeated crypto, personal/family crypto overlap | HOOD/COIN/MSTR/MARA/RIOT/BTC-USD | Up 1% to 4%; low durability and fade-prone | Basket avg -0.4%, med -0.8% on 2026-05-27 vs 2026-05-26 close; HOOD/RIOT hit but COIN/MSTR/BTC fell; Yahoo Finance chart API fetched 2026-05-29T17:07Z |  | miss (mixed) |
@@ -63,9 +65,10 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 | Tier 1A named-company praise | 0 | – | – | seed bias: high |
 | Tier 1B explicit BUY | 0 | – | – | manipulation scrutiny |
 | Tier 2A mega-investment | 0 | – | – | theme-durable |
-| Tier 2B tariff relief | 0 | – | – | one-day fade prone |
+| Tier 2B tariff/trade | 1 | 0/0 due | 0/0 due | EU auto-tariff enforcement call pending; durability remains fragile. |
+| Tier 2 healthcare pricing | 1 | 0/0 due | 0/0 due | TrumpRx/MFN price-control pressure pending; watch GLP-1 and large pharma basket. |
 | Tier 2C crypto | 2 | 1/2 | 0/0 due | One hit and one mixed miss; HOOD/RIOT were strongest, while BTC/MSTR lagged. Durability not yet measured. |
-| Tier 3 macro theme | 3 | 0/2 scored | 0/0 due | Diffuse Iran/energy-corridor calls have not confirmed; 38852 is not yet due. |
+| Tier 3 macro theme | 3 | 1/3 | 0/0 due | Hormuz de-escalation hit energy/defense down, while broad risk was mixed; earlier Iran/energy-corridor calls missed. |
 
 Update the counts as the live ledger fills. The point of the timer is to replace
 the seed priors with *measured* hit-rates so the lens gets sharper over time.
