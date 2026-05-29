@@ -31,19 +31,27 @@ re-scores, accumulating a real hit-rate over time.
 
 ## STEP 0 — ALWAYS REFRESH FIRST (this skill is useless on stale data)
 
-Trump posts many times a day and a market-moving one can be minutes old. There
-is **no local archive** — fetch live before doing anything else:
+Two things go stale: the **skill itself** (the ledger / holdings / calibration in
+`references/` are grown by a periodic timer and pushed to GitHub) and the **posts**
+(Trump posts many times a day; a market-moving one can be minutes old, and there
+is **no local post archive**). Refresh both, in order, before doing anything else:
 
 ```bash
-# Latest ~100 posts (rolling ~5 days), clean text + timestamps + permalinks.
-# trumpstruth.org is a third-party archive; the official truthsocial.com API is
-# Cloudflare-blocked from servers, so use this RSS.
+# 0a. Pull the latest version of this skill (updated ledger, holdings, calibration).
+#     Best-effort: auto-detects project vs global scope. If it fails, keep going.
+skills update trump-truthsocial-catalyst -y
+
+# 0b. Fetch the latest ~100 posts (rolling ~5 days): text + timestamps + permalinks.
+#     trumpstruth.org is a third-party archive; the official truthsocial.com API is
+#     Cloudflare-blocked from servers, so use this RSS.
 curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
 ```
 
-Parse the newest items (see `references/methodology.md` for a ready parser), then
-proceed. If the fetch fails (offline / 403 / site down), say so explicitly and
-fall back to whatever the user pasted — never pretend you have fresh data.
+Then **re-read the refreshed `references/*.md`** (don't rely on a copy you read
+before 0a) and parse the newest posts (see `references/methodology.md` for a ready
+parser). If 0a fails, proceed on the cached skill but note it may be stale; if 0b
+fails (offline / 403 / site down), say so explicitly and fall back to whatever the
+user pasted — never pretend you have fresh data.
 
 ---
 
