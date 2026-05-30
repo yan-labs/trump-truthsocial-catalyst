@@ -48,6 +48,7 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 
 | status_id | date (UTC) | post (short) | tier + amplifiers | implicated ticker(s) | predicted dir / magnitude / durability | T+1d actual | T+1w actual | hit? |
 |---|---|---|---|---|---|---|---|---|
+| 38877 | 2026-05-30 00:29 | [NYT attack during Reflecting Pool restoration dispute](https://trumpstruth.org/statuses/38877) | Tier 1 named-public-company attack; amps: direct NYT name/"Failing" attack, repeated media-adversary framing, no explicit policy action, no ownership overlap | NYT down | NYT down 0% to 1%; low conviction and likely headline fade unless paired with policy/legal pressure |  |  |  |
 | 38873 | 2026-05-29 19:05 | [TrumpRx.gov link; MFN prescription-pricing reset](https://trumpstruth.org/statuses/38873) | Tier 2 healthcare/drug-pricing policy; amps: official gov site, MFN/price-control language, intraday post | LLY/NVO/PFE/MRK/JNJ down; PBM/pharmacy impact mixed | Pharma/GLP-1 pricing basket down 0.5% to 3%; medium durability if MFN implementation holds, otherwise headline fade | Pharma/GLP-1 basket avg -1.0%, med -1.0% on 2026-05-29 vs 2026-05-28 close; Yahoo Finance chart API fetched 2026-05-29T22:03Z |  | hit |
 | 38866 | 2026-05-29 18:06 | [American oil shipment to Japan image](https://trumpstruth.org/statuses/38866) | Tier 3 energy/export; amps: US oil export/energy-dominance framing, intraday image, no named public company | XOM/CVX/OXY/COP; LNG/ET/KMI secondary | Energy/export basket up 0.2% to 1%; weak durability unless tied to contracts/export policy | Energy/export basket avg -1.4%, med -1.2% on 2026-05-29 vs 2026-05-28 close; Yahoo Finance chart API fetched 2026-05-29T22:03Z |  | miss |
 | 38858 | 2026-05-29 18:02 | [EU trade-deal enforcement / auto-tariff pressure](https://trumpstruth.org/statuses/38858) | Tier 2B tariff/trade enforcement; amps: policy he controls, auto-tariff deadline, official ambassador article | STLA/VWAGY/BMWYY/MBGYY down; GM/F/TSLA relative up | EU-auto ADRs down 0.5% to 2%; US domestic autos relative up small; fragile until July 4 deadline | EU-auto ADR basket avg -1.6%, med -1.2%; US-auto avg +0.7%, med -1.3% on 2026-05-29 vs 2026-05-28 close; BMWYY unavailable from Yahoo chart API; fetched 2026-05-29T22:03Z |  | hit (EU down; US relative mixed) |
@@ -67,6 +68,7 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 | Pattern | Calls logged | Directional hits | T+1w "held" | Notes |
 |---|---|---|---|---|
 | Tier 1A named-company praise | 1 | 0/1 | 0/0 due | Intel/government-investment image missed next-day; no buy call or ownership, so weaker than the Dell-style seed case. |
+| Tier 1 named-company attack | 1 | 0/0 due | 0/0 due | NYT attack logged as an inverse named-company signal; no explicit policy lever, so lower conviction than Tier 1 praise. |
 | Tier 1B explicit BUY | 0 | – | – | manipulation scrutiny |
 | Tier 2A mega-investment | 0 | – | – | theme-durable |
 | Tier 2B tariff/trade | 2 | 2/2 | 0/0 due | Steel/aluminum tariff commentary hit domestic producers; EU auto-tariff enforcement hit the EU-auto downside, though US-auto relative strength was mixed. |
