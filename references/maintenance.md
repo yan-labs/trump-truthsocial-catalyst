@@ -48,7 +48,16 @@ posts; let the counts talk.
 - Keep provenance compact: status_id + date + permalink, not full post text.
 - If `trumpstruth.org` is down, skip the run (don't log empty); retry next tick.
 - Holdings change: refresh `holdings-watchlist.md` only when a *new* OGE
-  disclosure drops (roughly periodic), not every run.
+  disclosure drops (roughly periodic), not every run. Use the official OGE
+  Officials' Individual Disclosures Search Collection first:
+  `https://www.oge.gov/web/oge.nsf/Officials%20Individual%20Disclosures%20Search%20Collection?OpenForm`.
+  Its DataTables endpoint is
+  `https://extapps2.oge.gov/201/Presiden.nsf/API.xsp/v2/rest`; filter the
+  `name` column with `Trump`, sort `docDate` descending, then download direct
+  PDF links from `278 Transaction` rows for `Trump, Donald J`.
+- OGE 278-T forms disclose transaction ranges, not exact current holdings. When
+  refreshing the watchlist, keep purchases, sales, bonds, ETFs, and family/private
+  assets separate; never infer current position size from a transaction row.
 
 ## Commit convention (if vendored into a repo like serenity)
 

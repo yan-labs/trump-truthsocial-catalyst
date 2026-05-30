@@ -36,12 +36,12 @@ his single most repeatable pattern (the **Dell template**).
 
 | Path | What it is |
 |---|---|
-| `trump-truthsocial-catalyst/SKILL.md` | The agent skill: the live-fetch Step 0, what the lens is for, how the references are organized, the three workflows, and the risk framing |
-| `trump-truthsocial-catalyst/references/methodology.md` | The tiered "what reliably pumps a stock" playbook: Tier 1–3 patterns, amplifier features, anti-patterns, durability, a per-post classification checklist, and the RSS fetch/parse recipe |
-| `trump-truthsocial-catalyst/references/theme-ticker-map.md` | Trump's recurring themes (crypto, AI infra, tariffs, energy, defense, reshoring, pharma, media, financials) → the tickers/sectors that typically react |
-| `trump-truthsocial-catalyst/references/holdings-watchlist.md` | Stocks his trust/family disclosed buying in 2026 + personal holdings, bucketed into "catalyst spent" vs. "owns-but-quiet" breakout candidates |
-| `trump-truthsocial-catalyst/references/track-record.md` | The accumulating hit-rate ledger — seeded documented wins/failures plus the live ledger the timer appends to and later scores |
-| `trump-truthsocial-catalyst/references/maintenance.md` | Rules for the periodic timer: fetch → dedupe → classify → log prediction → score outcome → recalibrate |
+| `SKILL.md` | The agent skill: the live-fetch Step 0, what the lens is for, how the references are organized, the three workflows, and the risk framing |
+| `references/methodology.md` | The tiered "what reliably pumps a stock" playbook: Tier 1–3 patterns, amplifier features, anti-patterns, durability, a per-post classification checklist, and the RSS fetch/parse recipe |
+| `references/theme-ticker-map.md` | Trump's recurring themes (crypto, AI infra, tariffs, energy, defense, reshoring, pharma, media, financials) → the tickers/sectors that typically react |
+| `references/holdings-watchlist.md` | Stocks his trust/family disclosed buying in 2026 + personal holdings, the official OGE disclosure source for updates, and "catalyst spent" vs. "owns-but-quiet" breakout buckets |
+| `references/track-record.md` | The accumulating hit-rate ledger — seeded documented wins/failures plus the live ledger the timer appends to and later scores |
+| `references/maintenance.md` | Rules for the periodic timer: fetch → dedupe → classify → log prediction → score outcome → recalibrate |
 
 ## How it works
 

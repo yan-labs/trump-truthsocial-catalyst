@@ -11,6 +11,35 @@ have *not* yet had a dedicated catalyst are the "not-yet-popped" candidates.
 > transaction; he may have since sold. Self-reported, unverified. This is a
 > conflict-of-interest map used as a *signal*, not an endorsement of acting on it.
 
+## Authoritative OGE disclosure source
+
+Use the U.S. Office of Government Ethics (OGE) **Officials' Individual
+Disclosures Search Collection** as the primary source for new public Trump
+financial-disclosure documents:
+
+- Search page:
+  `https://www.oge.gov/web/oge.nsf/Officials%20Individual%20Disclosures%20Search%20Collection?OpenForm`
+- Backing DataTables endpoint:
+  `https://extapps2.oge.gov/201/Presiden.nsf/API.xsp/v2/rest`
+- Query pattern: send the same DataTables parameters used by the page, filter
+  `columns[3][search][value]=Trump`, sort `docDate` descending, and look for
+  rows where `name` is `Trump, Donald J` and `type` includes direct PDF links
+  such as `278 Transaction`.
+- Implementation note: include the six page columns (`docDate`, `title`, `type`,
+  `name`, `agency`, `level`) and each column's `name`, `searchable`,
+  `orderable`, `search[value]`, and `search[regex]` parameters. A bare endpoint
+  call or global `search[value]=Trump` is not enough; the useful filter is the
+  `name` column filter.
+- Example verified latest 2026 result set: the 2026-05-14 rows link to
+  `Trump, Donald J.-05.08.2026-278T.pdf` and
+  `Trump, Donald J.-05.08.2026-278T(2).pdf`.
+
+Treat OGE as an **official disclosure locator**, not a clean holdings API. The
+PDFs are scanned/OCR'd forms; parse them carefully, preserve document dates and
+PDF URLs, and record whether each line is a `purchase`, `sale`, or bond/other
+instrument. Do not turn 278-T transaction ranges into exact position sizes or
+current holdings without a later confirming disclosure.
+
 ## Scale check (correct the "$2B" myth)
 - **Q1 2026 disclosed trades:** **3,600+ transactions**, cumulative value
   **~$220M–$750M** (range). He pivoted from mostly *bonds* (hundreds of millions,
@@ -64,5 +93,7 @@ Grouped by how "spent" the catalyst looks. Confirm price/news live before using.
    **ownership amplifier** (raises conviction; it's the Dell template).
 2. For workflow (b) "build a watchlist", lead with the **breakout-candidate**
    group above and pair each with the *specific* catalyst that would trigger it.
-3. Keep the structural caveat loud: ownership pumps are short-horizon; his own
+3. When updating this file, start from the OGE search/API above, then use
+   Reuters or issuer filings only as cross-checks or context.
+4. Keep the structural caveat loud: ownership pumps are short-horizon; his own
    assets prove a Trump pump and a good investment are not the same thing.

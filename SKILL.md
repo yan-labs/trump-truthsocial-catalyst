@@ -82,7 +82,7 @@ Read progressively — pull in only what the task needs.
 |---|---|---|
 | `references/methodology.md` | The tiered "what reliably pumps a stock" playbook: Tier 1–3 patterns, amplifier features, anti-patterns, durability, a per-post classification checklist, and the RSS fetch/parse recipe | Classifying any post, or judging how strong a signal is |
 | `references/theme-ticker-map.md` | Trump's recurring themes → the tickers/sectors that typically react | Mapping a topic (tariffs, crypto, energy, AI infra, defense…) to tradable names |
-| `references/holdings-watchlist.md` | Companies Trump's trust disclosed buying in 2026 + his personal/family holdings, flagged for "not-yet-popped" breakout potential | Building a watchlist, or asking "what does he own / what might pop next" |
+| `references/holdings-watchlist.md` | Companies Trump's trust disclosed buying in 2026 + his personal/family holdings, flagged for "not-yet-popped" breakout potential; includes the official OGE search/API source for updates | Building a watchlist, or asking "what does he own / what might pop next" |
 | `references/track-record.md` | The accumulating hit-rate ledger (seeded with documented wins and failures) + a calibration note on what actually has edge | Deciding *how much to weight* a given pattern; this is what the timer grows |
 | `references/maintenance.md` | Rules for the periodic timer: fetch → dedupe → classify → log prediction → score outcome → recalibrate | Running or wiring up the scheduled refresh |
 
@@ -110,7 +110,9 @@ Read progressively — pull in only what the task needs.
 
 ### (b) Build / refresh a Trump-catalyst watchlist
 
-1. Pull his disclosed holdings from `references/holdings-watchlist.md`.
+1. Pull his disclosed holdings from `references/holdings-watchlist.md`. If the
+   question depends on freshness, check the OGE source listed there for newer
+   `Trump, Donald J` 278-T PDFs before treating the watchlist as current.
 2. Bucket: **already popped** (Dell-style, catalyst spent) vs. **owns-but-quiet**
    (breakout candidates if the Dell template repeats: ownership + an admin
    tailwind like a contract, tariff carve-out, or public praise).
