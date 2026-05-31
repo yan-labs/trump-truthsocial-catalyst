@@ -1,4 +1,6 @@
+```bash
 npx skills add yan-labs/trump-truthsocial-catalyst
+```
 
 <p align="center"><img src="assets/trump.jpg" alt="Donald Trump" width="140" height="140"></p>
 
