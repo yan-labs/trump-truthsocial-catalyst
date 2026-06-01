@@ -48,6 +48,7 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 
 | status_id | date (UTC) | post (short) | tier + amplifiers | implicated ticker(s) | predicted dir / magnitude / durability | T+1d actual | T+1w actual | hit? |
 |---|---|---|---|---|---|---|---|---|
+| 38972 | 2026-05-31 23:27 | [CNN attack plus Iran nuclear-deal defense](https://trumpstruth.org/statuses/38972) | Tier 1 named-media attack + Tier 3 Iran nuclear/de-escalation; amps: direct CNN/Fake News attack, repeated Iran nuclear-deal thread, weekend/pre-open post, no explicit market policy detail, no ownership overlap | WBD down; XOM/CVX/OXY/COP and LMT/RTX down; SPY/IWM risk-on mixed/up | WBD down 0% to 1%; energy/defense down 0.3% to 1.5%; low conviction and likely headline fade unless deal terms are confirmed |  |  |  |
 | 38971 | 2026-05-31 20:18 | [New York Times "legal talent exodus" attack](https://trumpstruth.org/statuses/38971) | Tier 1 named-public-company attack; amps: direct NYT name/"Failing" attack, repeated media-adversary framing, weekend post, no explicit policy/legal action, no ownership overlap | NYT down | NYT down 0% to 1%; low conviction and likely headline fade unless followed by policy/legal pressure |  |  |  |
 | 38959 | 2026-05-31 14:13 | [Newt Gingrich RT on Iran coalition, naval blockade, Hormuz and kinetic options](https://trumpstruth.org/statuses/38959) | Tier 3 geopolitical/Hormuz risk; amps: Iran war/blockade/Hormuz/kinetic-options/oil-infrastructure language, repeated Iran thread, weekend/pre-open RT, no named public company, no ownership overlap | XOM/CVX/OXY/COP and LMT/RTX up; SPY/IWM risk-off mixed/down | Energy/defense up 0.3% to 1.5%; broad risk-off small; low durability and likely fade if "historic victory" diplomacy outweighs blockade/kinetic risk |  |  |  |
 | 38932 | 2026-05-30 21:50 | [Fort Knox physical-audit / gold-bars image](https://trumpstruth.org/statuses/38932) | Tier 3 gold/reserve-audit macro; amps: Fort Knox/gold reserve-audit language, weekend image, no named public company, no formal policy detail, no ownership overlap | GLD/GDX/GC=F up; NEM/AEM secondary | Gold/miners up 0.1% to 1%; very low conviction and likely headline fade unless a formal audit order follows |  |  |  |
@@ -72,13 +73,13 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 | Pattern | Calls logged | Directional hits | T+1w "held" | Notes |
 |---|---|---|---|---|
 | Tier 1A named-company praise | 1 | 0/1 | 0/0 due | Intel/government-investment image missed next-day; no buy call or ownership, so weaker than the Dell-style seed case. |
-| Tier 1 named-company attack | 2 | 0/0 due | 0/0 due | Two NYT attacks logged as inverse named-company signals; no explicit policy lever, so lower conviction than Tier 1 praise. |
+| Tier 1 named-company attack | 3 | 0/0 due | 0/0 due | Two NYT attacks plus one CNN/WBD attack logged as inverse named-company signals; no explicit policy lever, so lower conviction than Tier 1 praise. |
 | Tier 1B explicit BUY | 0 | – | – | manipulation scrutiny |
 | Tier 2A mega-investment | 0 | – | – | theme-durable |
 | Tier 2B tariff/trade | 3 | 2/2 | 0/0 due | Steel/aluminum tariff commentary hit domestic producers; EU auto-tariff enforcement hit the EU-auto downside, though US-auto relative strength was mixed; tariff-case legal-risk row pending. |
 | Tier 2 healthcare pricing | 1 | 1/1 | 0/0 due | TrumpRx/MFN price-control pressure hit the large pharma/GLP-1 downside basket; durability still unmeasured. |
 | Tier 2C crypto | 2 | 1/2 | 0/0 due | One hit and one mixed miss; HOOD/RIOT were strongest, while BTC/MSTR lagged. Durability not yet measured. |
-| Tier 3 macro theme | 7 | 2/5 | 0/1 | Iran de-escalation has hit energy/defense down but broad-risk calls remain mixed; Iran blockade risk missed at T+1d and T+1w; energy-corridor and oil-export up calls both missed; Fort Knox gold-audit and latest Hormuz-risk RT pending. |
+| Tier 3 macro theme | 8 | 2/5 | 0/1 | Iran de-escalation has hit energy/defense down but broad-risk calls remain mixed; Iran blockade risk missed at T+1d and T+1w; energy-corridor and oil-export up calls both missed; Fort Knox gold-audit, latest Hormuz-risk RT, and CNN/Iran-deal mixed row pending. |
 
 Update the counts as the live ledger fills. The point of the timer is to replace
 the seed priors with *measured* hit-rates so the lens gets sharper over time.
