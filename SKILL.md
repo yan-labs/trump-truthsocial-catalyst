@@ -1,25 +1,26 @@
 ---
 name: trump-truthsocial-catalyst
 description: >
-  Decision-support lens for reading Donald Trump's Truth Social posts (and his
-  disclosed personal holdings) as short-term US-stock catalysts — which names or
-  sectors are likely to pop, and how reliably. Use this skill whenever the user
-  asks what a Trump post / statement means for a stock, mentions "特朗普", "Trump
-  post", "Truth Social", "POTUS", a Trump endorsement/attack of a company, a
-  tariff / crypto / energy / AI-infra / defense policy signal from Trump, or
-  wants to know which stocks Trump owns or might pump next. Also trigger when
-  evaluating a buy/sell around a Trump headline or building a Trump-catalyst
-  watchlist. Live-fetches the latest posts first (no local archive).
+  Decision-support lens for reading Donald Trump's Truth Social posts,
+  @realDonaldTrump X posts, public statements, and disclosed personal holdings
+  as short-term US-stock catalysts — which names or sectors are likely to pop,
+  and how reliably. Use this skill whenever the user asks what a Trump post /
+  statement means for a stock, mentions "特朗普", "Trump post", "Truth Social",
+  "@realDonaldTrump", "POTUS", a Trump endorsement/attack of a company, a tariff
+  / crypto / energy / AI-infra / defense policy signal from Trump, or wants to
+  know which stocks Trump owns or might pump next. Also trigger when evaluating
+  a buy/sell around a Trump headline or building a Trump-catalyst watchlist.
+  Live-fetches the latest public posts first (no local archive).
   Decision-support only — never auto-trades and never places or cancels orders.
 ---
 
 # Trump Truth Social Catalyst Lens
 
-A reusable lens for turning **Donald Trump's public Truth Social posts** — plus
-**his own disclosed stock holdings** — into a short list of US stocks/sectors
-likely to move, with an honest read on *how reliably* each pattern actually
-pumps a stock. Built to be paired with a periodic timer that re-fetches and
-re-scores, accumulating a real hit-rate over time.
+A reusable lens for turning **Donald Trump's public Truth Social posts**,
+**@realDonaldTrump X posts**, and **his own disclosed stock holdings** into a
+short list of US stocks/sectors likely to move, with an honest read on *how
+reliably* each pattern actually pumps a stock. Built to be paired with a periodic
+timer that re-fetches and re-scores, accumulating a real hit-rate over time.
 
 > **Decision-support lens, NOT financial advice and NOT an auto-trader.** This
 > only *analyzes publicly available posts and public financial disclosures* to
@@ -41,17 +42,22 @@ is **no local post archive**). Refresh both, in order, before doing anything els
 #     Best-effort: auto-detects project vs global scope. If it fails, keep going.
 skills update trump-truthsocial-catalyst -y
 
-# 0b. Fetch the latest ~100 posts (rolling ~5 days): text + timestamps + permalinks.
+# 0b. Fetch the latest Truth Social posts: text + timestamps + permalinks.
 #     trumpstruth.org is a third-party archive; the official truthsocial.com API is
 #     Cloudflare-blocked from servers, so use this RSS.
 curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
+
+# 0c. Fetch the latest @realDonaldTrump X posts when xreach is available.
+#     X is a supplemental official public channel; many posts are video/link-only,
+#     so resolve context before scoring.
+xreach tweets @realdonaldtrump -n 40 --json > /tmp/trump_x.json
 ```
 
 Then **re-read the refreshed `references/*.md`** (don't rely on a copy you read
-before 0a) and parse the newest posts (see `references/methodology.md` for a ready
-parser). If 0a fails, proceed on the cached skill but note it may be stale; if 0b
-fails (offline / 403 / site down), say so explicitly and fall back to whatever the
-user pasted — never pretend you have fresh data.
+before 0a) and parse the newest posts (see `references/methodology.md` for ready
+parsers). If 0a fails, proceed on the cached skill but note it may be stale; if a
+source fails (offline / 403 / site down), say so explicitly and use the other
+source plus whatever the user pasted — never pretend you have fresh data.
 
 ---
 
@@ -80,7 +86,7 @@ Read progressively — pull in only what the task needs.
 
 | File | What it is | Read it when |
 |---|---|---|
-| `references/methodology.md` | The tiered "what reliably pumps a stock" playbook: Tier 1–3 patterns, amplifier features, anti-patterns, durability, a per-post classification checklist, and the RSS fetch/parse recipe | Classifying any post, or judging how strong a signal is |
+| `references/methodology.md` | The tiered "what reliably pumps a stock" playbook: Tier 1–3 patterns, amplifier features, anti-patterns, durability, a per-post classification checklist, and Truth Social / X fetch-parse recipes | Classifying any post, or judging how strong a signal is |
 | `references/theme-ticker-map.md` | Trump's recurring themes → the tickers/sectors that typically react | Mapping a topic (tariffs, crypto, energy, AI infra, defense…) to tradable names |
 | `references/holdings-watchlist.md` | Companies Trump's trust disclosed buying in 2026 + his personal/family holdings, flagged for "not-yet-popped" breakout potential; includes the official OGE search/API source for updates | Building a watchlist, or asking "what does he own / what might pop next" |
 | `references/track-record.md` | The accumulating hit-rate ledger (seeded with documented wins and failures) + a calibration note on what actually has edge | Deciding *how much to weight* a given pattern; this is what the timer grows |
@@ -92,8 +98,9 @@ Read progressively — pull in only what the task needs.
 
 ### (a) Read one post (or a batch) for tradable signals
 
-1. **Refresh** (Step 0). Identify the newest posts; dedupe against anything
-   already in `references/track-record.md` by status id.
+1. **Refresh** (Step 0). Identify the newest Truth Social and X posts; dedupe
+   against anything already in `references/track-record.md` by source id and
+   cross-source normalized text/time.
 2. For each post, run the **classification checklist** in
    `references/methodology.md`: is it market-relevant? Which Tier (1 named-stock /
    2 policy-sector / 3 macro)? Which amplifier features are present (named public

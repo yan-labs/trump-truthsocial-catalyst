@@ -9,16 +9,19 @@ npx skills add yan-labs/trump-truthsocial-catalyst
 [![skills.sh](https://skills.sh/b/yan-labs/trump-truthsocial-catalyst)](https://skills.sh/yan-labs/trump-truthsocial-catalyst)
 
 A **decision-support lens** that reads **Donald Trump's latest Truth Social
-posts** — together with **his disclosed personal/family stock holdings** — as
-short-term US-stock catalysts: which names or sectors are likely to pop, and an
-honest read on *how reliably* each pattern actually does.
+posts**, **@realDonaldTrump X posts**, and **his disclosed personal/family stock
+holdings** as short-term US-stock catalysts: which names or sectors are likely
+to pop, and an honest read on *how reliably* each pattern actually does.
 
-It **live-fetches the newest posts on every use** (via the public
-[trumpstruth.org](https://trumpstruth.org) RSS feed, because the official
-`truthsocial.com` API is Cloudflare-blocked from servers). There is **no local
-post archive** — the skill refreshes fresh each time so it never reasons on
-stale data. It is built to be paired with a periodic timer that re-fetches,
-re-scores, and accumulates a real, measured **hit-rate per pattern** over time.
+It **live-fetches the newest posts on every use** from the public
+[trumpstruth.org](https://trumpstruth.org) RSS feed and, when available,
+`@realDonaldTrump` on X via `xreach`. The official `truthsocial.com` API is
+Cloudflare-blocked from servers, so the RSS archive remains the main high-
+frequency text source; X is a supplemental official public channel that can
+surface videos, reposts, and high-engagement mirrors. There is **no local post
+archive** — the skill refreshes fresh each time so it never reasons on stale
+data. It is built to be paired with a periodic timer that re-fetches, re-scores,
+and accumulates a real, measured **hit-rate per pattern** over time.
 
 The edge it cross-references: *he owns a stock → he praises it → an
 administration tailwind (a contract, a tariff carve-out) follows → it pops* —

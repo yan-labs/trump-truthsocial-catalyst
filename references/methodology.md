@@ -118,12 +118,15 @@ For each fresh post, answer in order — stop early if it's not market-relevant:
 7. **Reliability + durability call:** combine Tier + amplifiers + the historical
    base-rate in `track-record.md` → state likely magnitude and whether it can hold
    or is a fade.
-8. **Log it** for the timer (see `maintenance.md`): id, date, classification,
-   predicted direction/magnitude — so the outcome can be scored later.
+8. **Log it** for the timer (see `maintenance.md`): source id, date, source,
+   classification, predicted direction/magnitude — so the outcome can be scored
+   later.
 
 ---
 
 ## Fetch + parse recipe (Step 0)
+
+### Truth Social via trumpstruth.org RSS
 
 ```bash
 curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
@@ -138,15 +141,58 @@ posts = []
 for it in items:
     link = it.findtext('link') or ''
     sid  = (re.search(r'/statuses/(\d+)', link) or [None, None])[1]
-    posts.append((it.findtext('pubDate'), sid, link, clean(it.findtext('description'))))
+    posts.append({
+        'source_id': f'truth:{sid}',
+        'source': 'Truth Social',
+        'date': it.findtext('pubDate'),
+        'link': link,
+        'text': clean(it.findtext('description')),
+    })
 # posts[0] is the most recent. Filter to market-relevant via the checklist above.
 ```
 
 Notes:
 - The feed is a rolling window (~100 posts / ~5 days), newest-first. For the timer,
-  **dedupe by `status_id`** so each post is scored once.
+  **dedupe by `truth:<status_id>`** so each post is scored once.
 - `RT:` items are reposts; resolve the linked status if it matters.
 - The official `truthsocial.com` API is Cloudflare-blocked from servers. If you
   ever need full fields / deeper history, `truthbrush` (needs a Truth Social
   login) or a real browser (agent-browser) are the fallbacks — but for catalyst
   spotting this RSS is enough.
+
+### X via @realDonaldTrump
+
+```bash
+xreach tweets @realdonaldtrump -n 40 --json > /tmp/trump_x.json
+```
+
+```python
+import json
+data = json.load(open('/tmp/trump_x.json'))
+items = data.get('items') if isinstance(data, dict) else data
+posts = []
+for t in items or []:
+    tid = str(t.get('id') or '')
+    if not tid:
+        continue
+    posts.append({
+        'source_id': f'x:{tid}',
+        'source': 'X',
+        'date': t.get('createdAt'),
+        'link': f"https://x.com/realdonaldtrump/status/{tid}",
+        'text': t.get('text') or '',
+        'is_retweet': bool(t.get('isRetweet')),
+        'is_quote': bool(t.get('isQuote')),
+        'media': t.get('media') or [],
+    })
+```
+
+X-specific caveats:
+- Treat X as an official supplemental channel, not a replacement for Truth
+  Social. It can be sparse and may contain video-only links or retweets.
+- For video/link-only posts, resolve the media, linked article, or visible
+  caption before scoring. If the market-relevant claim cannot be verified, skip
+  rather than logging a prediction.
+- Retweets without Trump commentary generally count as lower-conviction leads.
+- Cross-posted Truth Social/X messages should be logged once, using the clearest
+  source and noting the mirror source.

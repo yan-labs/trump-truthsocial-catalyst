@@ -9,20 +9,29 @@ cheap and append-only; don't rewrite history.
 1. **Fetch** the latest posts (Step 0):
    ```bash
    curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
+   xreach tweets @realdonaldtrump -n 40 --json > /tmp/trump_x.json
    ```
-   Parse with the recipe in `methodology.md`. The feed is a rolling ~5-day window,
-   so a run more often than every few days will see overlap — that's fine.
+   Parse with the recipes in `methodology.md`. Truth Social is the main high-
+   frequency text source; X is an official supplemental public channel and may be
+   sparse, video-heavy, or repost-heavy.
 
-2. **Dedupe by `status_id`** against the live ledger in `track-record.md`. Only
-   process posts not already logged.
+2. **Dedupe by source id** against the live ledger in `track-record.md`: use
+   `truth:<status_id>` for Truth Social and `x:<tweet_id>` for X. Also cross-
+   dedupe by normalized text or media title within a 24-hour window so a cross-
+   posted message is not logged twice. Prefer the source with the clearest text;
+   if both are equivalent, prefer Truth Social for continuity with the existing
+   ledger and mention the X mirror in notes.
 
 3. **Classify** each new post with the `methodology.md` checklist. `skip` anything
-   not market-relevant (most of the feed). Don't log skips except as a count.
+   not market-relevant (most of both feeds). Don't log skips except as a count.
+   For X video/link-only posts, resolve the media/article/context before scoring;
+   if context cannot be verified, store only a skip/count note and do not append
+   a prediction row.
 
 4. **Log a prediction** for each market-relevant post: append a row to the live
-   ledger (newest first, above the TIMER marker) with status_id, date, short text,
-   tier + amplifiers, implicated ticker(s), and predicted direction / magnitude /
-   durability. Leave T+1d / T+1w blank.
+   ledger (newest first, above the TIMER marker) with source id, date, source
+   link, short text/context, tier + amplifiers, implicated ticker(s), and
+   predicted direction / magnitude / durability. Leave T+1d / T+1w blank.
 
 5. **Score matured predictions.** For rows whose post is now ≥1 trading day (and
    ≥1 week) old, fill in the actual move of the implicated ticker (use the
@@ -45,8 +54,10 @@ posts; let the counts talk.
 
 - Append-only ledger; never delete scored rows (the misses are the most valuable
   calibration data).
-- Keep provenance compact: status_id + date + permalink, not full post text.
-- If `trumpstruth.org` is down, skip the run (don't log empty); retry next tick.
+- Keep provenance compact: source id + date + permalink, not full post text.
+- If `trumpstruth.org` is down, continue with X if available and say the Truth
+  source failed. If X/xreach fails, continue with Truth Social and say X failed.
+  If both fail, skip the run and retry next tick.
 - Holdings change: refresh `holdings-watchlist.md` only when a *new* OGE
   disclosure drops (roughly periodic), not every run. Use the official OGE
   Officials' Individual Disclosures Search Collection first:
