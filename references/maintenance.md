@@ -13,7 +13,8 @@ cheap and append-only; don't rewrite history.
    ```
    Parse with the recipes in `methodology.md`. Truth Social is the main high-
    frequency text source; X is an official supplemental public channel and may be
-   sparse, video-heavy, or repost-heavy.
+   sparse, video-heavy, or repost-heavy. Process only new `x:<tweet_id>`
+   candidates; if the latest X id has not changed, skip X classification quickly.
 
 2. **Dedupe by source id** against the live ledger in `track-record.md`: use
    `truth:<status_id>` for Truth Social and `x:<tweet_id>` for X. Also cross-
@@ -25,8 +26,8 @@ cheap and append-only; don't rewrite history.
 3. **Classify** each new post with the `methodology.md` checklist. `skip` anything
    not market-relevant (most of both feeds). Don't log skips except as a count.
    For X video/link-only posts, resolve the media/article/context before scoring;
-   if context cannot be verified, store only a skip/count note and do not append
-   a prediction row.
+   if context cannot be verified, store only a skip/count note in
+   `x-source-notes.md` and do not append a prediction row.
 
 4. **Log a prediction** for each market-relevant post: append a row to the live
    ledger (newest first, above the TIMER marker) with source id, date, source
@@ -49,6 +50,16 @@ Promote into the calibration takeaways only when it changes how we'd weight a
 pattern — e.g., "Tier 2C crypto posts hit direction 8/10 but held only 1/10",
 "named-company praise on a name he owns held 5/6". Don't editorialize single
 posts; let the counts talk.
+
+## X backfill queue
+
+Use `x-source-notes.md` for historical X candidates. Do not bulk append old X
+items to the live ledger without scoring them. When backfilling:
+
+1. Start with the three strongest candidates marked `Backfill candidate`.
+2. Verify full text/media context.
+3. Score T+1d and T+1w before inserting into `track-record.md`.
+4. Preserve `x:<tweet_id>` as the source id and note any Truth Social mirror.
 
 ## Hygiene
 

@@ -90,6 +90,7 @@ Read progressively — pull in only what the task needs.
 | `references/theme-ticker-map.md` | Trump's recurring themes → the tickers/sectors that typically react | Mapping a topic (tariffs, crypto, energy, AI infra, defense…) to tradable names |
 | `references/holdings-watchlist.md` | Companies Trump's trust disclosed buying in 2026 + his personal/family holdings, flagged for "not-yet-popped" breakout potential; includes the official OGE search/API source for updates | Building a watchlist, or asking "what does he own / what might pop next" |
 | `references/track-record.md` | The accumulating hit-rate ledger (seeded with documented wins and failures) + a calibration note on what actually has edge | Deciding *how much to weight* a given pattern; this is what the timer grows |
+| `references/x-source-notes.md` | @realDonaldTrump X source behavior, cross-source dedupe notes, and historical X seed candidates | When using or maintaining the X source |
 | `references/maintenance.md` | Rules for the periodic timer: fetch → dedupe → classify → log prediction → score outcome → recalibrate | Running or wiring up the scheduled refresh |
 
 ---
