@@ -14,7 +14,7 @@ cases, and (2) the live ledger the timer appends to and later scores.
 
 ### ✅ Worked (pumped as the pattern predicts)
 | Date | Trigger | Pattern | Name(s) | Outcome |
-|---|---|---|---|---|
+|---|---|---|---|
 | 2026-05-08 | "Go out and buy" Dell at White House (he also owned it) | **Tier 1A + ownership + contract follow-through** | DELL | +~14.6% intraday to ATH; +107% YTD; then $9.7B Pentagon contract. **Held** — the gold-standard case. |
 | 2025-04 | "THIS IS A GREAT TIME TO BUY!!! DJT" then tariff-pause | **Tier 1B + policy he controls** | DJT / S&P | DJT +22.67% that day; S&P +9.5% on the pause. Broad leg held (real policy); DJT later round-tripped. |
 | 2025-01-21 | Stargate "$500B largest AI infra" w/ Oracle | **Tier 2A** | ORCL + AI infra/power | ORCL & datacenter/power names rallied; theme persisted weeks. |
@@ -48,6 +48,7 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 
 | source_id | date (UTC) | post (short) | tier + amplifiers | implicated ticker(s) | predicted dir / magnitude / durability | T+1d actual | T+1w actual | hit? |
 |---|---|---|---|---|---|---|---|---|
+| 39161 | 2026-06-08 20:43 | [Trump calls RINO Sen. Tillis "Loser" in press remarks](https://trumpstruth.org/statuses/39161) | Tier 3 political/intra-party attack; amps: direct senator/RINO attack, intra-GOP budget-reconciliation vote risk, after-hours post, no named public company, no ownership overlap | TLT/IEF (indirect, reconciliation-delay/fiscal risk only) | No direct market signal; reconciliation-delay risk minor noise; likely headline fade |  |  |  |
 | 39160 | 2026-06-08 18:19 | [Fire Senate Parliamentarian; McConnell/Reid/Obama holdover attack](https://trumpstruth.org/statuses/39160) | Tier 3 political/governance; amps: Senate Parliamentarian/budget-reconciliation process risk, intraday post, no named public company or crypto, no ownership overlap | TLT/IEF (indirect fiscal/deficit risk) | Bonds mild sell-off 0.0% to 0.5% if reconciliation rules are bent; very low conviction, likely headline fade |  |  |  |
 | 39044 | 2026-06-02 18:20 | [Treasury-led EO to restrict financial-system use tied to smuggling, drugs, illegal immigration and cartels](https://trumpstruth.org/statuses/39044) | Tier 2 regulatory / financial-compliance policy; amps: signed-EO claim, Treasury-led, banks/credit cards/financial institutions named, intraday post, policy he controls, broad sector/no named company, disclosed BAC/GS ownership overlap but not a favorable company mention | JPM/BAC/GS and V/MA/AXP/COF/SYF mixed/down | Large banks/payment networks down or mixed 0% to 0.5%; low conviction and likely fade unless Treasury rulemaking, enforcement targets, or compliance costs become specific | Banks avg -0.29%, med -0.24%; payments/credit avg -0.27%, med -0.14% from 2026-06-02 18:20 UTC to 20:00 close; Yahoo Finance 5m chart API fetched 2026-06-02T20:50Z |  | hit (weak, broad-sector) |
 | 39040 | 2026-06-02 17:00 | [Iran talks continuous; "time ... to make a Deal"](https://trumpstruth.org/statuses/39040) | Tier 3 geopolitical/nuclear de-escalation; amps: direct Iran-talks/deal language, intraday post, policy he controls, repeated Iran thread, no named public company, no ownership overlap | XOM/CVX/OXY/COP and LMT/RTX down; SPY/IWM risk-on up | Energy/defense down 0.3% to 1.5%; broad risk-on small; medium-low durability until deal terms, sanctions path, or enrichment limits are confirmed | Energy avg -0.18%, med -0.18%; defense avg +0.34%; SPY/IWM avg +0.12% from 2026-06-02 17:00 UTC to 20:00 close; Yahoo Finance 5m chart API fetched 2026-06-02T20:50Z |  | mixed (energy/broad hit; defense not) |
@@ -89,7 +90,7 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 | Tier 2 regulatory sector policy | 2 | 1/2 | 0/0 due | Treasury financial-compliance pressure hit weakly post-to-close; EPA right-to-repair missed badly as DE/AGCO/CNH rallied. |
 | Tier 2 healthcare pricing | 1 | 1/1 | 0/0 due | TrumpRx/MFN price-control pressure hit the large pharma/GLP-1 downside basket; durability still unmeasured. |
 | Tier 2C crypto | 2 | 1/2 | 0/1 | One hit and one mixed miss; HOOD/RIOT were strongest, while BTC/MSTR lagged. The 38814 week check did not hold at basket level. |
-| Tier 3 macro theme | 15 | 2/15 | 1/2 | Iran/Middle East remains noisy: 38979, 38981, and 39040 all scored mixed after the 2026-06-02 close; 38778 de-escalation held through T+1w, while most other macro rows were mixed or missed; +1 political/governance (39160 Senate Parliamentarian fire call, unscored). |
+| Tier 3 macro theme | 16 | 2/16 | 1/2 | Iran/Middle East remains noisy: 38979, 38981, and 39040 all scored mixed after the 2026-06-02 close; 38778 de-escalation held through T+1w, while most other macro rows were mixed or missed; +1 political/governance (39160 Senate Parliamentarian fire call, unscored); +1 political/intra-party (39161 Trump/Tillis RINO attack, unscored). |
 
 Update the counts as the live ledger fills. The point of the timer is to replace
 the seed priors with *measured* hit-rates so the lens gets sharper over time.
