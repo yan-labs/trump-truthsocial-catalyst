@@ -14,7 +14,7 @@ cases, and (2) the live ledger the timer appends to and later scores.
 
 ### ✅ Worked (pumped as the pattern predicts)
 | Date | Trigger | Pattern | Name(s) | Outcome |
-|---|---|---|---|
+|---|---|---|---|---|
 |---|
 | 2026-05-08 | "Go out and buy" Dell at White House (he also owned it) | **Tier 1A + ownership + contract follow-through** | DELL | +~14.6% intraday to ATH; +107% YTD; then $9.7B Pentagon contract. **Held** — the gold-standard case. |
 | 2025-04 | "THIS IS A GREAT TIME TO BUY!!! DJT" then tariff-pause | **Tier 1B + policy he controls** | DJT / S&P | DJT +22.67% that day; S&P +9.5% on the pause. Broad leg held (real policy); DJT later round-tripped. |
@@ -49,6 +49,8 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 
 | source_id | date (UTC) | post (short) | tier + amplifiers | implicated ticker(s) | predicted dir / magnitude / durability | T+1d actual | T+1w actual | hit? |
 |---|---|---|---|---|---|---|---|---|
+| 39168 | 2026-06-09 06:11 | [Media/RT post — no original text extracted](https://trumpstruth.org/statuses/39168) | Tier 3 RT/media-only; amps: no extractable original text, possible boost or image-only post, after-hours | — | No direct market signal; RT or media post; noise |  |  | — |
+| 39167 | 2026-06-09 06:10 | [Boost/RT of earlier TruthSocial status](https://trumpstruth.org/statuses/39167) | Tier 3 RT/noise; amps: repost of own earlier status (116718662947146337), no new original content or market-relevant text | — | No direct market signal; RT/boost; noise |  |  | — |
 | 39165 | 2026-06-08 22:59 | [Endorsement of Wes Climer for SC 5th Congressional District](https://trumpstruth.org/statuses/39165) | Tier 3 political/endorsement; amps: SC congressional primary, MAGA branding, no named public company, no crypto, no market instrument | — | No direct market signal; pure political endorsement; noise |  |  | — |
 | 39164 | 2026-06-08 22:59 | [Ohio Voter ID SJR 10 — urges House passage + constitutional amendment](https://trumpstruth.org/statuses/39164) | Tier 3 political/legislative; amps: OH state voter-ID legislation, no named public company, no crypto, no market instrument | — | No direct market signal; state-level political/legislative push; noise |  |  | — |
 | 39163 | 2026-06-08 23:00 | [Endorsement of GA Lt. Gov. Burt Jones for Governor](https://trumpstruth.org/statuses/39163) | Tier 3 political/endorsement; amps: GA gubernatorial race, early voting underway, no named public company, no crypto, no market instrument | — | No direct market signal; pure political endorsement; noise |  |  | — |
@@ -95,7 +97,7 @@ hit/miss. Over time, group by pattern to compute a real hit-rate.
 | Tier 2 regulatory sector policy | 2 | 1/2 | 0/0 due | Treasury financial-compliance pressure hit weakly post-to-close; EPA right-to-repair missed badly as DE/AGCO/CNH rallied. |
 | Tier 2 healthcare pricing | 1 | 1/1 | 0/0 due | TrumpRx/MFN price-control pressure hit the large pharma/GLP-1 downside basket; durability still unmeasured. |
 | Tier 2C crypto | 2 | 1/2 | 0/1 | One hit and one mixed miss; HOOD/RIOT were strongest, while BTC/MSTR lagged. The 38814 week check did not hold at basket level. |
-| Tier 3 macro theme | 20 | 2/20 | 1/2 | Iran/Middle East remains noisy: 38979, 38981, and 39040 all scored mixed after the 2026-06-02 close; 38778 de-escalation held through T+1w, while most other macro rows were mixed or missed; +1 political/governance (39160 Senate Parliamentarian fire call, unscored); +1 political/intra-party (39161 Trump/Tillis RINO attack, unscored); +1 political/campaign-rally (39162 TeleRally endorsement, unscored); +1 GA Gov endorsement (39163, unscored); +1 OH Voter ID legislative (39164, unscored); +1 SC Congress endorsement (39165, unscored). |
+| Tier 3 macro theme | 22 | 2/22 | 1/2 | Iran/Middle East remains noisy: 38979, 38981, and 39040 all scored mixed after the 2026-06-02 close; 38778 de-escalation held through T+1w, while most other macro rows were mixed or missed; +1 political/governance (39160 Senate Parliamentarian fire call, unscored); +1 political/intra-party (39161 Trump/Tillis RINO attack, unscored); +1 political/campaign-rally (39162 TeleRally endorsement, unscored); +1 GA Gov endorsement (39163, unscored); +1 OH Voter ID legislative (39164, unscored); +1 SC Congress endorsement (39165, unscored); +2 TruthSocial RT/boost posts (39167, 39168, unscored). |
 
 Update the counts as the live ledger fills. The point of the timer is to replace
 the seed priors with *measured* hit-rates so the lens gets sharper over time.
