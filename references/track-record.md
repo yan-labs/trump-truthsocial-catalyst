@@ -10,6 +10,7 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-12 | truth:39233 | "Peace Through Strength" DoW TV ad debuts at White House UFC Fight; Warrior Ethos back, military recruiting push | 3 | LMT↑ RTX↑ NOC↑ GD↑ | UP — defense sentiment boost | | | |
 | 2026-06-12 | truth:39226 | Iran disputes leaked deal terms; calls Iran "dishonorable"; rebuffed drone attack on India mentioned | 3 | OIL/USO↑ GLD↑ LMT↑ RTX↑ | UP energy/gold/defense (deal collapse risk + escalation) | | | |
 | 2026-06-12 | truth:39225 | Congress passes immigration funding bill (ICE/border patrol win) | 2B | AXON↑, PLTR↑, GEO↑, CXW↑ | UP — border security basket; AXON+PLTR ownership amplifier | | | |
 
