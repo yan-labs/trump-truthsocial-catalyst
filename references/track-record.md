@@ -10,6 +10,7 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-13 | truth:39237 | Congratulates Team USA on 4-1 Copa America win over Paraguay; "Keep it going!" | 3 | — | — (sports/celebratory, no market catalyst) | | | |
 | 2026-06-13 | truth:39234 | US Southern Command kills Tren De Aragua gang leader Niño Guerrero on Trump's order; blames Biden open border for allowing gang into US | 3 | GEO↑ CXW↑ (weak) | UP — border/law-enforcement security sentiment (indirect, low conviction) | | | |
 | 2026-06-12 | truth:39233 | "Peace Through Strength" DoW TV ad debuts at White House UFC Fight; Warrior Ethos back, military recruiting push | 3 | LMT↑ RTX↑ NOC↑ GD↑ | UP — defense sentiment boost | | | |
 | 2026-06-12 | truth:39226 | Iran disputes leaked deal terms; calls Iran "dishonorable"; rebuffed drone attack on India mentioned | 3 | OIL/USO↑ GLD↑ LMT↑ RTX↑ | UP energy/gold/defense (deal collapse risk + escalation) | | | |
