@@ -10,6 +10,7 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-13 | truth:39243 | Announces intent to appoint James McDonald (ex-CFTC Enforcement Director, ex-SDNY AUSA) as SDNY US Attorney — CFTC-trained enforcer in key financial crimes seat | 2 | BTC↑ ETH↑ COIN↑ (weak) | UP (weak) — CFTC-aligned enforcer at SDNY signals commodity-first approach; crypto classification benefit | | | |
 | 2026-06-13 | truth:39238 | "Obama Library will be a Mecca for those who hate America" — political attack on Obama | 3 | — | — (political commentary, no market catalyst) | | | |
 | 2026-06-13 | truth:39239 | Touts his Iran deal as opposite of JCPOA; "Iran no longer wants a nuclear weapon, nor will they have one" — signals diplomatic deal sealed | 2 | OIL/USO↓ GLD↓ LMT↓ RTX↓ NOC↓ | DOWN — Iran de-escalation reduces war premium; oil bearish if sanctions ease; defense/gold headwind | | | |
 | 2026-06-13 | truth:39237 | Congratulates Team USA on 4-1 Copa America win over Paraguay; "Keep it going!" | 3 | — | — (sports/celebratory, no market catalyst) | | | |
