@@ -10,6 +10,7 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-14 | truth:39250 | "Attack on Beirut should not have happened"; very close to Iran peace deal; Iran de-escalation signal; criticizes Israel for disrupting deal process | 2 | OIL/USO↓ GLD↓ LMT↓ RTX↓ NOC↓ | DOWN — Iran deal imminent narrative reinforced; Trump publicly pressing Israel to stand down; war-premium reduction continues from 39239 signal | | | |
 | 2026-06-14 | truth:39248 | Endorses "MAGA" Mike Collins for Georgia US Senate race | 3 | — | — (political endorsement, no market catalyst) | | | |
 | 2026-06-14 | truth:39247 | Congratulates Jim Dolan & NY Knicks on NBA playoff run; "a superstar was born" (Jalen Brunson) | 3 | MSGS↑ (weak) | — (sports/celebratory; Jim Dolan owns MSGS/MSGE but no business catalyst) | | | |
 | 2026-06-13 | truth:39246 | [Media-only post — no text extracted from RSS; published 22:41:34 UTC Jun 13] | 3 | — | — (no readable content) | | | |
