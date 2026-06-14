@@ -10,6 +10,8 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-13 | truth:39244 | "Years ago after saving the Wollman Skating Rink in Central Park – Long before I fixed The Reflecting Pool, and everything else in Washington, D.C. including, most importantly, CRIME!" — personal historical anecdote, self-promotion | 3 | — | — (personal/political, no market catalyst) | | | |
+| 2026-06-13 | truth:39245 | [Media-only post — no text extracted from RSS; published 22:41:44 UTC Jun 13] | 3 | — | — (no readable content) | | | |
 | 2026-06-13 | truth:39243 | Announces intent to appoint James McDonald (ex-CFTC Enforcement Director, ex-SDNY AUSA) as SDNY US Attorney — CFTC-trained enforcer in key financial crimes seat | 2 | BTC↑ ETH↑ COIN↑ (weak) | UP (weak) — CFTC-aligned enforcer at SDNY signals commodity-first approach; crypto classification benefit | | | |
 | 2026-06-13 | truth:39238 | "Obama Library will be a Mecca for those who hate America" — political attack on Obama | 3 | — | — (political commentary, no market catalyst) | | | |
 | 2026-06-13 | truth:39239 | Touts his Iran deal as opposite of JCPOA; "Iran no longer wants a nuclear weapon, nor will they have one" — signals diplomatic deal sealed | 2 | OIL/USO↓ GLD↓ LMT↓ RTX↓ NOC↓ | DOWN — Iran de-escalation reduces war premium; oil bearish if sanctions ease; defense/gold headwind | | | |
