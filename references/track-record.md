@@ -10,6 +10,9 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-14 | truth:39256 | "Republicans are moving too fast on nominations!!!" — criticism of GOP nomination pace; no company or sector named | 3 | — | — (political commentary, no market catalyst) | | | |
+| 2026-06-14 | truth:39255 | Attacks Democrats opposing Bill Pulte as Acting DNI; "There must be something BIG" — implies hidden wrongdoing | 3 | — | — (political/bureaucratic, no market catalyst) | | | |
+| 2026-06-14 | truth:39254 | Against FISA reauthorization unless the "Save America Act" is bundled with it; conditions intelligence-bill vote on broader legislative agenda | 3 | — | — (political/legislative, no market catalyst) | | | |
 | 2026-06-14 | truth:39253 | [Media-only post — no text extracted from RSS; published 16:43:32 UTC Jun 14] | 3 | — | — (no readable content) | | | |
 | 2026-06-14 | truth:39252 | Endorses John Wahl (former Alabama GOP Chairman) for Lieutenant Governor of Alabama; standard political endorsement | 3 | — | — (political endorsement, no market catalyst) | | | |
 | 2026-06-14 | truth:39251 | "Thank you Michael. The Dumocrats Weaponized Government at levels never seen before, and you survived it all. They should pay the ultimate price" — political solidarity post thanking unnamed "Michael" who withstood alleged Democratic government weaponization; no company or sector named | 3 | — | — (political/personal solidarity, no market catalyst) | | | |
