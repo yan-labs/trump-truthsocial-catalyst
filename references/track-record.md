@@ -10,6 +10,8 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-14 | truth:39258 | Praises Victoria Coates (Heritage Foundation); "Iran will never have a Nuclear weapon, and the Strait of Hormuz will be opening up for business very shortly!!!" — explicit Hormuz opening signal | 2 | OIL/USO↓ XLE↓ GLD↓ LMT↓ RTX↓ NOC↓; STNG↑ FRO↑ | DOWN oil/gold/defense; UP tankers/shipping — Hormuz open removes Iran supply-premium | | | |
+| 2026-06-14 | truth:39257 | Rebukes Senator Reed's comparison to JCPOA; "Our Deal is a WALL against Iran ever having a Nuclear weapon" — reinforces de-escalation narrative | 3 | OIL/USO↓ GLD↓ LMT↓ RTX↓ NOC↓ | DOWN (continuation of 39239/39250/39258 Iran de-escalation signal) | | | |
 | 2026-06-14 | truth:39256 | "Republicans are moving too fast on nominations!!!" — criticism of GOP nomination pace; no company or sector named | 3 | — | — (political commentary, no market catalyst) | | | |
 | 2026-06-14 | truth:39255 | Attacks Democrats opposing Bill Pulte as Acting DNI; "There must be something BIG" — implies hidden wrongdoing | 3 | — | — (political/bureaucratic, no market catalyst) | | | |
 | 2026-06-14 | truth:39254 | Against FISA reauthorization unless the "Save America Act" is bundled with it; conditions intelligence-bill vote on broader legislative agenda | 3 | — | — (political/legislative, no market catalyst) | | | |
