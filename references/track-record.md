@@ -10,6 +10,7 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-14 | truth:39251 | "Thank you Michael. The Dumocrats Weaponized Government at levels never seen before, and you survived it all. They should pay the ultimate price" — political solidarity post thanking unnamed "Michael" who withstood alleged Democratic government weaponization; no company or sector named | 3 | — | — (political/personal solidarity, no market catalyst) | | | |
 | 2026-06-14 | truth:39250 | "Attack on Beirut should not have happened"; very close to Iran peace deal; Iran de-escalation signal; criticizes Israel for disrupting deal process | 2 | OIL/USO↓ GLD↓ LMT↓ RTX↓ NOC↓ | DOWN — Iran deal imminent narrative reinforced; Trump publicly pressing Israel to stand down; war-premium reduction continues from 39239 signal | | | |
 | 2026-06-14 | truth:39248 | Endorses "MAGA" Mike Collins for Georgia US Senate race | 3 | — | — (political endorsement, no market catalyst) | | | |
 | 2026-06-14 | truth:39247 | Congratulates Jim Dolan & NY Knicks on NBA playoff run; "a superstar was born" (Jalen Brunson) | 3 | MSGS↑ (weak) | — (sports/celebratory; Jim Dolan owns MSGS/MSGE but no business catalyst) | | | |
