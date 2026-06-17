@@ -10,6 +10,7 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-17 | truth:39312 | "Congratulations to Rick Jackson, who very successfully campaigned on being 'TRUMP,' and won. He will be your next Governor of Georgia. Can't wait! President DJT" — post-election congratulation after Georgia Governor GOP primary win Jun 17 | 3 | — | — (political congratulation; no named company or sector catalyst) | | | |
 | 2026-06-17 | truth:39311 | "I HAD A LOT OF BIG ELECTION WINS LAST NIGHT. THANK YOU TO ALL!!! President DJT" — election night celebration after GOP primary/special elections; personal political victory statement | 3 | — | — (political/celebratory, no named company or sector catalyst) | | | |
 | 2026-06-17 | truth:39300–39310 | [11 media-only posts — no text extracted from RSS; published 04:07–04:09 UTC Jun 17] | 3 | — | — (no readable content) | | | |
 | 2026-06-16 | truth:39298 | "Biden DOJ targeted parents at school board meetings despite FBI, sheriffs' objections, memos show" — RT of news article on DOJ/school-board enforcement history | 3 | — | — (political/DOJ history; no market catalyst) | | | |
