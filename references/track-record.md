@@ -10,6 +10,11 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-18 | truth:39325 | "THE SAVE AMERICA ACT!" — voter ID, citizenship proof, no mail-in ballots, no men in women's sports, no transgender surgery on children; 02:15 UTC Jun 18 | 3 | — | — (political/legislative demands; continuation of Save America Act thread 39276/39262/39254; no market catalyst) | | | |
+| 2026-06-18 | truth:39326 | Endorses Colombian presidential candidate "El Tigre" Abelardo de la Espriella; pro-trade, anti-immigration, economy/jobs framing; 02:13 UTC Jun 18 | 3 | — | — (foreign political endorsement; Colombia-US trade incidental, no direct market catalyst) | | | |
+| 2026-06-18 | truth:39327 | Endorses Congressman Mike Kennedy, M.D. (UT-4); physician/lawyer/state-legislator background; standard MAGA America First endorsement; 02:12 UTC Jun 18 | 3 | — | — (political endorsement; no market catalyst) | | | |
+| 2026-06-18 | truth:39328 | Endorses Congresswoman Celeste Maloy (UT-3); "Border SECURE, American Energy DOMINANCE, Cut Taxes"; 02:11 UTC Jun 18 | 3 | — | — (political endorsement; energy/border language standard boilerplate, no specific policy catalyst) | | | |
+| 2026-06-18 | truth:39324 | Endorses Congressman Blake Moore (UT-2), VP of House Republican Conference; "America First Agenda, Energy DOMINANCE, Made in USA"; 02:07 UTC Jun 18 | 3 | — | — (political endorsement; House leadership role noted but no specific policy/market catalyst) | | | |
 | 2026-06-18 | truth:39322 | "Thank you to Great Republican Senator, Eric Schmitt!" — political appreciation post Jun 18 01:51 UTC | 3 | — | — (political; no market catalyst) | | | |
 | 2026-06-18 | truth:39323 | [No Title — media/embed-only post; published 01:51:36 UTC Jun 18 2026] | 3 | — | — (no readable content) | | | |
 | 2026-06-18 | truth:39321 | "Congratulations to Commissioner Brian Rolapp, the PGA Tour, and Jay Clayton (SDNY) for BIG VICTORY where USGA wanted to roll back golf ball distance — precluded for many years" — sports/legal ruling on golf equipment standards | 3 | — | — (sports/legal; Jay Clayton reference procedural, not a policy or market signal) | | | |
@@ -42,7 +47,7 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 | 2026-06-15 | truth:39274 | UFC at the White House was "incredible"; praises Bo Nickal, Gaethje, Gane, O'Malley, Hokit, Ruffy, Lopes | 3 | TKO↑ (weak) | — (sports/celebratory; TKO Holdings ref very weak; no business announcement) | | | |
 | 2026-06-15 | truth:39275 | Endorses Eric Metaxas book "Revolution: The Birth of the Greatest Nation in the History of the World" | 3 | — | — (book endorsement; no market catalyst) | | | |
 | 2026-06-15 | truth:39276 | Reiterates opposition to standalone FISA; demands full Save America Act (voter ID, citizenship, no mail-in ballots) | 3 | — | — (political/legislative, no market catalyst) | | | |
-| 2026-06-15 | truth:39277 | Endorses Barry Moore (first Trump endorser nationally) for Alabama US Senate | 3 | — | — (political endorsement, no market catalyst) | | | |
+| 2026-06-15 | truth:39277 | Endorses Barry Moore (former Alabama GOP Chairman) for Alabama US Senate | 3 | — | — (political endorsement, no market catalyst) | | | |
 | 2026-06-15 | truth:39278 | Endorses "MAGA" Mike Collins for Georgia US Senate | 3 | — | — (political endorsement, no market catalyst) | | | |
 | 2026-06-15 | truth:39279 | Endorses Lt. Gov. Burt Jones for Georgia Governor | 3 | — | — (political endorsement, no market catalyst) | | | |
 | 2026-06-15 | truth:39280 | Endorses Mike Mazzei for Oklahoma Governor | 3 | — | — (political endorsement, no market catalyst) | | | |
