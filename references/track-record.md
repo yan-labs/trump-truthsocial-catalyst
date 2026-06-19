@@ -10,6 +10,7 @@ Newest entries first. Leave T+1d / T+1w blank when posting; fill in after the re
 
 | 日期 | source:id | 简短内容 | Tier | 涉及资产 | 预测方向 | T+1d结果 | T+1w结果 | hit/miss |
 |------|-----------|---------|------|---------|---------|---------|---------|----------|
+| 2026-06-19 | truth:39382 | "Very popular agreement, except for the Fake News and their partner, the Dumocrats!" — celebratory/political commentary on the US-Iran deal signed Jun 19; 18:24 UTC Jun 19 | 3 | — | — (macro/sentiment; likely refers to Iran ceasefire deal; no named company or direct sector catalyst; continuation of 39258–39381 Iran de-escalation celebration cluster) | | | |
 | 2026-06-19 | truth:39381 | Complete endorsement of Senator Lindsey Graham (SC) for re-election; Senate Budget Committee Chair championing "Lower Taxes, Cut Regulations, Eliminate Government Waste, Border SECURE, American Energy DOMINANCE"; "HE WILL NEVER LET YOU DOWN!"; 15:10 UTC Jun 19 | 3 | — | — (political endorsement; no named company; no market catalyst) | | | |
 | 2026-06-19 | truth:39380 | [No Title — empty/media-only post; published 15:10:09 UTC Jun 19 2026] | 3 | — | — (no readable content) | | | |
 | 2026-06-19 | truth:39374 | [No Title — media-only post; published 13:44:40 UTC Jun 19 2026] | 3 | — | — (no readable content) | | | |
