@@ -65,6 +65,7 @@ Initial partial backfill, captured with `xreach tweets @realdonaldtrump --json
 
 | source_id | Reason |
 |---|---|
+| `x:2073607119878623432` | Newest X item in this run was visible only as a `t.co` short link. No text, media caption, or independently verified market context was available, so it was not scored. |
 | `x:2057968277062582378` | Latest captured X post was visible text `t.co` plus video media. Content was not resolved, so do not score. |
 | `x:2028505632123326484` | Visible text only a short link plus video media. Market context unverified. |
 | GOTV / campaign endorsements / personal attacks | No clear ticker, sector, or policy lever. Usually outside this skill's market ledger. |
