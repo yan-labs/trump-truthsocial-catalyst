@@ -42,10 +42,14 @@ is **no local post archive**). Refresh both, in order, before doing anything els
 #     Best-effort: auto-detects project vs global scope. If it fails, keep going.
 skills update trump-truthsocial-catalyst -y
 
-# 0b. Fetch the latest Truth Social posts: text + timestamps + permalinks.
-#     trumpstruth.org is a third-party archive; the official truthsocial.com API is
-#     Cloudflare-blocked from servers, so use this RSS.
+# 0b. Fetch the primary Truth Social archive: text + timestamps + permalinks.
+#     trumpstruth.org is a third-party archive; keep its numeric archive ids as
+#     the canonical ids for the existing ledger.
 curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
+
+# 0b-alt. Fetch an independent Truth Social archive for freshness checks and
+#        fallback when the primary archive is unavailable.
+curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
 
 # 0c. Fetch the latest @realDonaldTrump X posts when xreach is available.
 #     X is a supplemental official public channel; many posts are video/link-only,
@@ -54,10 +58,25 @@ xreach tweets @realdonaldtrump -n 40 --json > /tmp/trump_x.json
 ```
 
 Then **re-read the refreshed `references/*.md`** (don't rely on a copy you read
-before 0a) and parse the newest posts (see `references/methodology.md` for ready
-parsers). If 0a fails, proceed on the cached skill but note it may be stale; if a
-source fails (offline / 403 / site down), say so explicitly and use the other
-source plus whatever the user pasted — never pretend you have fresh data.
+before 0a) and parse both Truth feeds (see `references/methodology.md` for ready
+parsers). Use `trumpstruth.org` for the existing `truth:<archive_id>` ledger ids;
+use `trump.fm` as an independent freshness check and as a fallback capture source.
+The archive ids identify posts but are not a monotonic time cursor: sort by
+parsed publication time and use `last_update_time` as the watermark, with the
+post id only as a dedupe key/tie-breaker. Compare the newest post timestamp and,
+when available, the official Truth platform id. If both feeds agree, an
+unchanged newest post is a confirmed `no_new_posts` result, not a fetch failure.
+If they disagree, mark the primary as stale and preserve both source
+observations; do not advance the primary cursor from an unverified guess. When
+a fallback-only item must be logged, use `truthsocial:<platform_id>` plus its
+canonical Truth permalink and cross-dedupe it against a later
+`truth:<archive_id>` by normalized text and time.
+If 0a fails, proceed on the cached skill but note it may be stale; if a source
+fails (offline / 403 / site down), say so explicitly and use the other Truth
+feed plus whatever the user pasted — never pretend you have fresh data. The
+official `truthsocial.com` page/API remains a browser-or-login fallback only
+when the Cloudflare challenge can be legitimately completed; do not substitute
+an unverified HTML mirror.
 
 ---
 

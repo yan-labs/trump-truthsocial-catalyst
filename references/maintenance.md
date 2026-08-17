@@ -9,17 +9,39 @@ cheap and append-only; don't rewrite history.
 1. **Fetch** the latest posts (Step 0):
    ```bash
    curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
+   curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
    xreach tweets @realdonaldtrump -n 40 --json > /tmp/trump_x.json
    ```
-   Parse with the recipes in `methodology.md`. Truth Social is the main high-
-   frequency text source; X is an official supplemental public channel and may be
-   sparse, video-heavy, or repost-heavy. Process only new `x:<tweet_id>`
-   candidates; if the latest X id has not changed, skip X classification quickly.
+   Parse both Truth feeds with the recipes in `methodology.md`. The
+   `trumpstruth.org` feed is the primary ledger source and its numeric archive
+   ids remain canonical. `trump.fm/rss/truth.xml` is an independent public
+   archive with official Truth platform ids; use it to confirm freshness and as
+   a fallback capture source. X is an official supplemental public channel and
+   may be sparse, video-heavy, or repost-heavy. Process only new `x:<tweet_id>`
+   candidates; if the latest X id has not changed or its connector health check
+   is stale, skip X classification quickly and report the channel warning.
+
+   Before classifying, record source health:
+
+   - HTTP 2xx plus valid XML and at least one item is an `available` source.
+   - Compute the newest item by parsed `pubDate`, not by array position or the
+     largest archive number. Archive ids can arrive out of numeric order; use
+     `last_update_time` as the watermark and source ids only for dedupe/ties. If
+     the two Truth feeds agree on timestamp and official platform id, an
+     unchanged watermark is `no_new_posts` and is safe to retain.
+   - If the primary returns 200 but the alternate is newer, mark the primary
+     `stale`; capture the alternate-only item with `truthsocial:<platform_id>`
+     and its official permalink, but do not invent or advance a numeric
+     `trumpstruth.org` cursor.
+   - If one feed fails, continue with the other and say which source failed. If
+     both fail, retain the prior state and retry next tick; never turn a stale
+     200 response into a success claim.
 
 2. **Dedupe by source id** against the live ledger in `track-record.md`: use
-   `truth:<status_id>` for Truth Social and `x:<tweet_id>` for X. Also cross-
-   dedupe by normalized text or media title within a 24-hour window so a cross-
-   posted message is not logged twice. Prefer the source with the clearest text;
+   `truth:<status_id>` for primary Truth items, `truthsocial:<platform_id>` for
+   fallback-only items, and `x:<tweet_id>` for X. Also cross-dedupe by normalized
+   text or media title within a 24-hour window so a cross-posted message is not
+   logged twice. Prefer the source with the clearest text;
    if both are equivalent, prefer Truth Social for continuity with the existing
    ledger and mention the X mirror in notes.
 
@@ -66,9 +88,11 @@ items to the live ledger without scoring them. When backfilling:
 - Append-only ledger; never delete scored rows (the misses are the most valuable
   calibration data).
 - Keep provenance compact: source id + date + permalink, not full post text.
-- If `trumpstruth.org` is down, continue with X if available and say the Truth
-  source failed. If X/xreach fails, continue with Truth Social and say X failed.
-  If both fail, skip the run and retry next tick.
+- If `trumpstruth.org` is down, use `trump.fm/rss/truth.xml` as the Truth
+  fallback before relying on X, and say the primary source failed. If X/xreach
+  fails, continue with the available Truth feed and say X failed. If both Truth
+  feeds fail, continue with X only if its freshness is independently verified;
+  otherwise skip the run and retry next tick.
 - Holdings change: refresh `holdings-watchlist.md` only when a *new* OGE
   disclosure drops (roughly periodic), not every run. Use the official OGE
   Officials' Individual Disclosures Search Collection first:

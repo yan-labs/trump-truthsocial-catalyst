@@ -4,7 +4,25 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://trumpstruth.org/statuses/40913",
-  "last_update_time": "2026-08-17T01:01:27Z",
+  "last_truth_social_id": "https://trumpstruth.org/statuses/40910",
+  "last_update_time": "2026-08-17T01:02:37Z",
+  "cursor_mode": "pubDate_watermark",
+  "last_checked_time": "2026-08-17T04:13:00Z",
+  "source_health": {
+    "trumpstruth_rss": {
+      "status": "available",
+      "latest_archive_id": "40910",
+      "latest_post_time": "2026-08-17T01:02:37Z"
+    },
+    "trumpfm_truth_rss": {
+      "status": "available",
+      "latest_platform_id": "117108149935654446",
+      "latest_post_time": "2026-08-17T01:02:37Z"
+    },
+    "official_truthsocial": {
+      "status": "blocked_cloudflare",
+      "checked_time": "2026-08-17T04:13:00Z"
+    }
+  },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
 }

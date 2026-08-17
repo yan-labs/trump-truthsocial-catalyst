@@ -130,6 +130,7 @@ For each fresh post, answer in order — stop early if it's not market-relevant:
 
 ```bash
 curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
+curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
 ```
 
 ```python
@@ -153,12 +154,29 @@ for it in items:
 
 Notes:
 - The feed is a rolling window (~100 posts / ~5 days), newest-first. For the timer,
-  **dedupe by `truth:<status_id>`** so each post is scored once.
+  **dedupe by `truth:<status_id>`** so each post is scored once. Do not use the
+  numeric archive id as a greater-than cursor: the archive can publish ids out
+  of numeric order (for example, 40910–40913 arrived by time as 40910, 40911,
+  40912, 40913). Sort by parsed `pubDate`, keep a `last_update_time` watermark,
+  and use the id only as identity or a same-time tie-breaker.
 - `RT:` items are reposts; resolve the linked status if it matters.
+- `trumpstruth.org` is the primary archive and the source of the existing numeric
+  `truth:<status_id>` ids. Its FAQ says the archive checks every few minutes and
+  may cache, so a 200 response alone is not a freshness proof.
+- Parse `trump.fm/rss/truth.xml` as an independent cross-check. Its item link is
+  `https://trump.fm/post/ts_<platform_id>`; derive the stable alternate id as
+  `truthsocial:<platform_id>` and the canonical permalink as
+  `https://truthsocial.com/@realDonaldTrump/<platform_id>`. Use the alternate
+  id only when the primary archive is unavailable or demonstrably stale, and
+  cross-dedupe against later numeric archive ids by normalized text plus UTC
+  timestamp.
+- Compare the newest `pubDate` and platform id from both feeds. Matching values
+  plus an unchanged time watermark mean `no_new_posts`; disagreement means the
+  primary is stale and must not advance its cursor from an unverified guess.
 - The official `truthsocial.com` API is Cloudflare-blocked from servers. If you
   ever need full fields / deeper history, `truthbrush` (needs a Truth Social
-  login) or a real browser (agent-browser) are the fallbacks — but for catalyst
-  spotting this RSS is enough.
+  login) or a real browser (agent-browser) are the fallbacks — but do not
+  replace a working public feed with an unverified HTML mirror.
 
 ### X via @realDonaldTrump
 

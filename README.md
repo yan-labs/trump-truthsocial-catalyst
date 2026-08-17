@@ -14,14 +14,21 @@ holdings** as short-term US-stock catalysts: which names or sectors are likely
 to pop, and an honest read on *how reliably* each pattern actually does.
 
 It **live-fetches the newest posts on every use** from the public
-[trumpstruth.org](https://trumpstruth.org) RSS feed and, when available,
-`@realDonaldTrump` on X via `xreach`. The official `truthsocial.com` API is
-Cloudflare-blocked from servers, so the RSS archive remains the main high-
-frequency text source; X is a supplemental official public channel that can
-surface videos, reposts, and high-engagement mirrors. There is **no local post
-archive** — the skill refreshes fresh each time so it never reasons on stale
-data. It is built to be paired with a periodic timer that re-fetches, re-scores,
-and accumulates a real, measured **hit-rate per pattern** over time.
+[trumpstruth.org](https://trumpstruth.org) RSS feed, cross-checks it against the
+independent [trump.fm Truth Social RSS feed](https://trump.fm/rss/truth.xml),
+and, when available, fetches `@realDonaldTrump` on X via `xreach`. The official
+`truthsocial.com` API is Cloudflare-blocked from servers, so the two public RSS
+archives provide the main high-frequency text path; X is a supplemental
+official public channel that can surface videos, reposts, and high-engagement
+mirrors. The primary archive remains the canonical source for the existing
+numeric ledger ids, while `trump.fm` is used for freshness checks and as a
+fallback capture path. There is **no local post archive** — the skill refreshes
+fresh each time and records `no_new_posts` separately from a stale/failed source
+so it never silently reasons on unverified data. Its archive ids are post
+identifiers, not a monotonic cursor; refreshes use publication time plus
+id-based dedupe. It is built to be paired with a
+periodic timer that re-fetches, re-scores, and accumulates a real, measured
+**hit-rate per pattern** over time.
 
 The edge it cross-references: *he owns a stock → he praises it → an
 administration tailwind (a contract, a tariff carve-out) follows → it pops* —
@@ -56,6 +63,7 @@ anything else:
 
 ```bash
 curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
+curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
 ```
 
 It parses the newest items (clean text + timestamps + permalinks), dedupes by
