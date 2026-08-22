@@ -25,10 +25,16 @@
     },
     "x_reach": {
       "status": "stale_unverified",
+      "direct_status": "stale_unverified",
+      "rss_bridge_status": "stale",
+      "rss_bridge_latest_id": "2082159711852298494",
+      "rss_bridge_latest_time": "2026-07-28T17:42:14Z",
+      "verification_source": "fxtwitter_status",
+      "freshness": "exact_status_only",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-08-22T08:08:58Z",
-      "next_action": "Retry bird/xreach; do not advance last_tweet_id from this response"
+      "checked_time": "2026-08-22T16:15:28Z",
+      "next_action": "Retry xreach and RSS-Bridge; Jina is temporarily unavailable; do not advance last_tweet_id without a newer timeline timestamp"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."

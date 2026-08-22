@@ -21,7 +21,11 @@ Social:
 
 For every scheduled run:
 
-1. Fetch latest X posts with `xreach tweets @realdonaldtrump -n 40 --json`.
+1. Fetch latest X posts with `python3 scripts/fetch_x.py --state
+   data/sync_state.json > /tmp/trump_x.json`. The wrapper tries the direct
+   xreach timeline first, then RSS-Bridge's public Atom timeline, and then
+   Jina's public profile plus exact status page when the direct response is old
+   or unavailable.
 2. Normalize each candidate as `x:<tweet_id>`.
 3. Cross-dedupe against Truth Social ledger rows using source id, normalized
    text, media/link context, and a 24-hour window.
@@ -29,6 +33,29 @@ For every scheduled run:
    tradable market read.
 5. Keep video/link-only or retweet items here as source notes unless the market
    context is independently verified.
+
+## Direct connector fallback
+
+The direct `xreach`/bird connector can return HTTP-successful JSON whose newest
+item is several weeks old. Do not call that current data. `fetch_x.py` uses an
+independent RSS-Bridge timeline and the exact Jina status page as bounded public
+fallbacks. FxTwitter/VxTwitter are used only to verify the saved status when
+the public timeline views are blocked:
+
+- `available`: direct xreach has a post newer than the saved observation;
+- `available_fallback`: RSS-Bridge or Jina verified a newer visible top status;
+- `verified_no_new_posts`: Jina verified that the visible top status is the
+  same post and timestamp as the saved observation;
+- `stale_unverified` with `freshness: exact_status_only`: FxTwitter/VxTwitter
+  verified the saved id and timestamp, but no current timeline was established;
+- `stale_unverified`: no public path established freshness.
+
+None of these fallbacks is a full timeline archive. RSS-Bridge is a useful
+second subscription channel, but it must still be freshness-checked; an old
+RSS response is not proof that X has no newer posts. Keep
+`direct_status: stale_unverified` in sync state when a fallback is used and
+never advance `last_tweet_id` from an old direct response or an
+exact-status-only result.
 
 ## Historical X seed candidates
 

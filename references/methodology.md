@@ -181,8 +181,18 @@ Notes:
 ### X via @realDonaldTrump
 
 ```bash
-xreach tweets @realdonaldtrump -n 40 --json > /tmp/trump_x.json
+python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
 ```
+
+`fetch_x.py` tries `xreach tweets` first. A successful response is not treated
+as fresh when its newest timestamp is at or before the saved X observation. It
+then tries an independent RSS-Bridge Atom timeline, followed by the public
+profile and exact top-status page through Jina Reader. If those timeline views
+are blocked, FxTwitter/VxTwitter can verify the saved status id, timestamp, and
+text, but cannot prove that no newer post exists. The output keeps the normal
+`items` list and adds a source status: `available`, `available_fallback`,
+`verified_no_new_posts`, or `stale_unverified`; the latter may carry
+`freshness: exact_status_only`.
 
 ```python
 import json
@@ -208,6 +218,12 @@ for t in items or []:
 X-specific caveats:
 - Treat X as an official supplemental channel, not a replacement for Truth
   Social. It can be sparse and may contain video-only links or retweets.
+- RSS-Bridge and Jina verify only a visible/top timeline observation; they are
+  freshness/latest-post fallbacks, not a complete timeline backfill.
+- FxTwitter/VxTwitter exact-status responses verify only the known saved post;
+  keep them `exact_status_only` and do not use them to advance a cursor.
+- Keep the direct xreach result's connector warning when the fallback verifies
+  no change, so an eventual gap in the fallback is visible rather than hidden.
 - For video/link-only posts, resolve the media, linked article, or visible
   caption before scoring. If the market-relevant claim cannot be verified, skip
   rather than logging a prediction.

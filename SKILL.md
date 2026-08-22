@@ -51,10 +51,10 @@ curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
 #        fallback when the primary archive is unavailable.
 curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
 
-# 0c. Fetch the latest @realDonaldTrump X posts when xreach is available.
-#     X is a supplemental official public channel; many posts are video/link-only,
-#     so resolve context before scoring.
-xreach tweets @realdonaldtrump -n 40 --json > /tmp/trump_x.json
+# 0c. Fetch the latest @realDonaldTrump X posts.
+#     The wrapper rejects a successful-but-old xreach timeline and tries an
+#     RSS-Bridge Atom timeline, then Jina's profile/status fallback.
+python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
 ```
 
 Then **re-read the refreshed `references/*.md`** (don't rely on a copy you read
@@ -71,12 +71,19 @@ observations; do not advance the primary cursor from an unverified guess. When
 a fallback-only item must be logged, use `truthsocial:<platform_id>` plus its
 canonical Truth permalink and cross-dedupe it against a later
 `truth:<archive_id>` by normalized text and time.
-If 0a fails, proceed on the cached skill but note it may be stale; if a source
-fails (offline / 403 / site down), say so explicitly and use the other Truth
-feed plus whatever the user pasted — never pretend you have fresh data. The
-official `truthsocial.com` page/API remains a browser-or-login fallback only
-when the Cloudflare challenge can be legitimately completed; do not substitute
-an unverified HTML mirror.
+For X, `fetch_x.py` reports `available` for a fresh direct timeline,
+`available_fallback` for a newer post verified through RSS-Bridge or Jina,
+`verified_no_new_posts` when Jina confirms that the visible top post has not
+changed, `stale_unverified` with `freshness: exact_status_only` when
+FxTwitter/VxTwitter can only re-check the saved status, and plain
+`stale_unverified` when no public path responds. The fallback is a
+freshness/latest-post check, not a complete historical timeline; never advance
+`last_tweet_id` from an old direct response or an exact-status-only result. If 0a fails, proceed on the cached
+skill but note it may be stale; if a source fails (offline / 403 / site down),
+say so explicitly and use the other Truth feed plus whatever the user pasted —
+never pretend you have fresh data. The official `truthsocial.com` page/API
+remains a browser-or-login fallback only when the Cloudflare challenge can be
+legitimately completed; do not substitute an unverified HTML mirror.
 
 ---
 

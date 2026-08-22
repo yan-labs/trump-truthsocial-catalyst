@@ -10,16 +10,21 @@ cheap and append-only; don't rewrite history.
    ```bash
    curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
    curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
-   xreach tweets @realdonaldtrump -n 40 --json > /tmp/trump_x.json
+   python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
    ```
    Parse both Truth feeds with the recipes in `methodology.md`. The
    `trumpstruth.org` feed is the primary ledger source and its numeric archive
    ids remain canonical. `trump.fm/rss/truth.xml` is an independent public
    archive with official Truth platform ids; use it to confirm freshness and as
    a fallback capture source. X is an official supplemental public channel and
-   may be sparse, video-heavy, or repost-heavy. Process only new `x:<tweet_id>`
-   candidates; if the latest X id has not changed or its connector health check
-   is stale, skip X classification quickly and report the channel warning.
+   may be sparse, video-heavy, or repost-heavy. `scripts/fetch_x.py` first tries
+   xreach, then RSS-Bridge, then verifies the public profile's visible top
+   status and its exact published timestamp through Jina when the timelines are
+   old or unavailable. It can also verify the saved status through FxTwitter or
+   VxTwitter, but that result is exact-status-only and is not a current-feed
+   proof. Process only new `x:<tweet_id>` candidates; a
+   `verified_no_new_posts` result is safe to record as a checked no-change,
+   while `stale_unverified` still requires a warning and no cursor advance.
 
    Before classifying, record source health:
 
@@ -36,6 +41,11 @@ cheap and append-only; don't rewrite history.
    - If one feed fails, continue with the other and say which source failed. If
      both fail, retain the prior state and retry next tick; never turn a stale
      200 response into a success claim.
+   - For X, keep the direct connector warning in `direct_status` even when a
+     fallback verifies the visible top status. Do not advance `last_tweet_id`
+     for `verified_no_new_posts` or `exact_status_only`; use `source`,
+     `freshness`, and `latest_returned_time` to record what was actually
+     verified.
 
 2. **Dedupe by source id** against the live ledger in `track-record.md`: use
    `truth:<status_id>` for primary Truth items, `truthsocial:<platform_id>` for

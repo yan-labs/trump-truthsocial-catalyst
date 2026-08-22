@@ -16,11 +16,15 @@ to pop, and an honest read on *how reliably* each pattern actually does.
 It **live-fetches the newest posts on every use** from the public
 [trumpstruth.org](https://trumpstruth.org) RSS feed, cross-checks it against the
 independent [trump.fm Truth Social RSS feed](https://trump.fm/rss/truth.xml),
-and, when available, fetches `@realDonaldTrump` on X via `xreach`. The official
-`truthsocial.com` API is Cloudflare-blocked from servers, so the two public RSS
-archives provide the main high-frequency text path; X is a supplemental
-official public channel that can surface videos, reposts, and high-engagement
-mirrors. The primary archive remains the canonical source for the existing
+and fetches `@realDonaldTrump` on X through `scripts/fetch_x.py`, which tries
+`xreach` first, then an RSS-Bridge Atom timeline and Jina profile/status
+fallbacks when the direct timeline is stale. If all public timelines are
+blocked or stale, FxTwitter/VxTwitter verifies the saved status exactly without
+claiming that it is current. The official `truthsocial.com` API is
+Cloudflare-blocked from servers,
+so the two public RSS archives provide the main high-frequency text path; X is a
+supplemental official public channel that can surface videos, reposts, and
+high-engagement mirrors. The primary archive remains the canonical source for the existing
 numeric ledger ids, while `trump.fm` is used for freshness checks and as a
 fallback capture path. There is **no local post archive** — the skill refreshes
 fresh each time and records `no_new_posts` separately from a stale/failed source
@@ -64,7 +68,14 @@ anything else:
 ```bash
 curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
 curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
+python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
 ```
+
+The X wrapper reports whether the direct timeline was fresh, whether a newer
+post was verified through a fallback, whether the current visible post was
+verified unchanged, whether only the saved status could be checked, or whether
+freshness is still unverified. The fallback does not pretend to provide a
+complete historical timeline.
 
 It parses the newest items (clean text + timestamps + permalinks), dedupes by
 `status_id`, and runs each market-relevant post through a classification
