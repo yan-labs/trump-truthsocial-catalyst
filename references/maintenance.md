@@ -24,7 +24,9 @@ cheap and append-only; don't rewrite history.
    VxTwitter, but that result is exact-status-only and is not a current-feed
    proof. Process only new `x:<tweet_id>` candidates; a
    `verified_no_new_posts` result is safe to record as a checked no-change,
-   while `stale_unverified` still requires a warning and no cursor advance.
+   including a one-off authenticated browser profile check; this browser
+   evidence is not an unattended dependency. `stale_unverified` still requires
+   a warning and no cursor advance.
 
    Before classifying, record source health:
 

@@ -73,8 +73,9 @@ canonical Truth permalink and cross-dedupe it against a later
 `truth:<archive_id>` by normalized text and time.
 For X, `fetch_x.py` reports `available` for a fresh direct timeline,
 `available_fallback` for a newer post verified through RSS-Bridge or Jina,
-`verified_no_new_posts` when Jina confirms that the visible top post has not
-changed, `stale_unverified` with `freshness: exact_status_only` when
+`verified_no_new_posts` when Jina or an authenticated browser profile confirms
+that the visible top post has not changed, `stale_unverified` with
+`freshness: exact_status_only` when
 FxTwitter/VxTwitter can only re-check the saved status, and plain
 `stale_unverified` when no public path responds. The fallback is a
 freshness/latest-post check, not a complete historical timeline; never advance

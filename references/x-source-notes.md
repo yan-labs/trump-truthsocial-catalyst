@@ -57,6 +57,12 @@ RSS response is not proof that X has no newer posts. Keep
 never advance `last_tweet_id` from an old direct response or an
 exact-status-only result.
 
+When an authenticated browser profile visibly shows the same top status, it may
+be recorded as `verification_source: chrome_profile_ui` with
+`status: verified_no_new_posts`. This is a manual evidence checkpoint for the
+next unattended retry, not a reason to store browser cookies or depend on the
+browser for scheduled fetching.
+
 ## Historical X seed candidates
 
 The historical seed table is intentionally compact. It is for candidates that
