@@ -4,20 +4,20 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://trumpstruth.org/statuses/41113",
-  "last_update_time": "2026-08-21T22:12:18Z",
+  "last_truth_social_id": "https://trumpstruth.org/statuses/41118",
+  "last_update_time": "2026-08-22T02:37:46Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-08-22T01:00:40Z",
+  "last_checked_time": "2026-08-22T08:08:58Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41113",
-      "latest_post_time": "2026-08-21T22:12:18Z"
+      "latest_archive_id": "41118",
+      "latest_post_time": "2026-08-22T02:37:46Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117135791766560725",
-      "latest_post_time": "2026-08-21T22:12:18Z"
+      "latest_platform_id": "117136835644298066",
+      "latest_post_time": "2026-08-22T02:37:46Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
@@ -27,7 +27,7 @@
       "status": "stale_unverified",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-08-22T01:00:40Z",
+      "checked_time": "2026-08-22T08:08:58Z",
       "next_action": "Retry bird/xreach; do not advance last_tweet_id from this response"
     }
   },
