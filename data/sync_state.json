@@ -4,40 +4,40 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://trumpstruth.org/statuses/41118",
-  "last_update_time": "2026-08-22T02:37:46Z",
+  "last_truth_social_id": "https://trumpstruth.org/statuses/41125",
+  "last_update_time": "2026-08-22T22:09:58Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-08-22T08:08:58Z",
+  "last_checked_time": "2026-08-23T01:05:51Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41118",
-      "latest_post_time": "2026-08-22T02:37:46Z"
+      "latest_archive_id": "41125",
+      "latest_post_time": "2026-08-22T22:09:58Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117136835644298066",
-      "latest_post_time": "2026-08-22T02:37:46Z"
+      "latest_platform_id": "117141444922153076",
+      "latest_post_time": "2026-08-22T22:09:58Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
       "checked_time": "2026-08-17T04:13:00Z"
     },
     "x_reach": {
-      "status": "verified_no_new_posts",
+      "status": "stale_unverified",
       "direct_status": "stale_unverified",
       "rss_bridge_status": "stale",
       "rss_bridge_latest_id": "2082159711852298494",
       "rss_bridge_latest_time": "2026-07-28T17:42:14Z",
-      "browser_status": "verified_no_new_posts",
+      "browser_status": "unavailable",
       "browser_latest_id": "2082159711852298494",
       "browser_latest_time": "2026-07-28T17:42:14Z",
-      "verification_source": "chrome_profile_ui",
-      "freshness": "no_new_posts",
+      "verification_source": "fxtwitter_status",
+      "freshness": "exact_status_only",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-08-22T18:16:20Z",
-      "next_action": "Retry xreach and RSS-Bridge next tick; Chrome profile top confirms no newer visible post; do not advance last_tweet_id without a newer timeline timestamp"
+      "checked_time": "2026-08-23T01:03:31Z",
+      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; this run only verified the saved status and Chrome was unavailable; do not advance last_tweet_id without a newer timeline timestamp"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
