@@ -7,17 +7,17 @@
   "last_truth_social_id": "https://trumpstruth.org/statuses/41125",
   "last_update_time": "2026-08-22T22:09:58Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-08-23T01:05:51Z",
+  "last_checked_time": "2026-08-24T01:02:56Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41125",
-      "latest_post_time": "2026-08-22T22:09:58Z"
+      "latest_archive_id": "41132",
+      "latest_post_time": "2026-08-24T00:53:24Z"
     },
     "trumpfm_truth_rss": {
-      "status": "available",
-      "latest_platform_id": "117141444922153076",
-      "latest_post_time": "2026-08-22T22:09:58Z"
+      "status": "stale",
+      "latest_platform_id": "117144988493215562",
+      "latest_post_time": "2026-08-23T13:11:09Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
@@ -26,7 +26,7 @@
     "x_reach": {
       "status": "stale_unverified",
       "direct_status": "stale_unverified",
-      "rss_bridge_status": "stale",
+      "rss_bridge_status": "failed",
       "rss_bridge_latest_id": "2082159711852298494",
       "rss_bridge_latest_time": "2026-07-28T17:42:14Z",
       "browser_status": "unavailable",
@@ -36,8 +36,8 @@
       "freshness": "exact_status_only",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-08-23T01:03:31Z",
-      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; this run only verified the saved status and Chrome was unavailable; do not advance last_tweet_id without a newer timeline timestamp"
+      "checked_time": "2026-08-24T01:01:34Z",
+      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach latest was not newer than stored 2082159711852298494; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina exposed no realDonaldTrump status URL; Chrome unavailable; do not advance last_tweet_id or Truth RSS cursor until freshness/alignment is proven"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
