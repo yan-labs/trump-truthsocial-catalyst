@@ -4,20 +4,20 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://trumpstruth.org/statuses/41357",
-  "last_update_time": "2026-08-29T00:21:20Z",
+  "last_truth_social_id": "https://trumpstruth.org/statuses/41374",
+  "last_update_time": "2026-08-29T21:36:35Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-08-29T01:02:04Z",
+  "last_checked_time": "2026-08-30T01:12:22Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41357",
-      "latest_post_time": "2026-08-29T00:21:20Z"
+      "latest_archive_id": "41374",
+      "latest_post_time": "2026-08-29T21:36:35Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117175935338426953",
-      "latest_post_time": "2026-08-29T00:21:20Z"
+      "latest_platform_id": "117180949829008293",
+      "latest_post_time": "2026-08-29T21:36:35Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
@@ -36,8 +36,8 @@
       "freshness": "exact_status_only",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-08-29T01:02:04Z",
-      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach latest was not newer than stored 2082159711852298494; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina curl failed with LibreSSL SSL_ERROR_SYSCALL; Chrome unavailable; do not advance last_tweet_id without a newer timeline timestamp"
+      "checked_time": "2026-08-30T01:12:22Z",
+      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach latest was not newer than stored 2082159711852298494; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina curl failed (60) because r.jina.ai presented no matching certificate subject; Chrome unavailable; do not advance last_tweet_id without a newer timeline timestamp"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
