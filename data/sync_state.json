@@ -4,18 +4,18 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://trumpstruth.org/statuses/41374",
-  "last_update_time": "2026-08-29T21:36:35Z",
+  "last_truth_social_id": "https://trumpstruth.org/statuses/41405",
+  "last_update_time": "2026-08-31T00:26:05Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-08-30T01:12:22Z",
+  "last_checked_time": "2026-08-31T01:05:23Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41374",
-      "latest_post_time": "2026-08-29T21:36:35Z"
+      "latest_archive_id": "41405",
+      "latest_post_time": "2026-08-31T00:26:05Z"
     },
     "trumpfm_truth_rss": {
-      "status": "available",
+      "status": "failed",
       "latest_platform_id": "117180949829008293",
       "latest_post_time": "2026-08-29T21:36:35Z"
     },
@@ -36,8 +36,8 @@
       "freshness": "exact_status_only",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-08-30T01:12:22Z",
-      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach latest was not newer than stored 2082159711852298494; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina curl failed (60) because r.jina.ai presented no matching certificate subject; Chrome unavailable; do not advance last_tweet_id without a newer timeline timestamp"
+      "checked_time": "2026-08-31T01:05:23Z",
+      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach failed because the client socket disconnected before TLS; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina curl timed out after 35008 milliseconds; Chrome unavailable; do not advance last_tweet_id without a newer timeline timestamp"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
