@@ -4,27 +4,27 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://trumpstruth.org/statuses/41438",
-  "last_update_time": "2026-08-31T22:10:13Z",
+  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41441",
+  "last_update_time": "2026-09-01T07:47:54Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-01T01:05:56Z",
+  "last_checked_time": "2026-09-01T10:14:22Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41438",
-      "latest_post_time": "2026-08-31T22:10:13Z"
+      "latest_archive_id": "41441",
+      "latest_post_time": "2026-09-01T07:47:54Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117192406705033763",
-      "latest_post_time": "2026-08-31T22:10:13Z"
+      "latest_platform_id": "117194678237730264",
+      "latest_post_time": "2026-09-01T07:47:54Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
       "checked_time": "2026-08-17T04:13:00Z"
     },
     "x_reach": {
-      "status": "stale_unverified",
+      "status": "verified_no_new_posts",
       "direct_status": "stale_unverified",
       "rss_bridge_status": "failed",
       "rss_bridge_latest_id": "2082159711852298494",
@@ -32,12 +32,12 @@
       "browser_status": "unavailable",
       "browser_latest_id": "2082159711852298494",
       "browser_latest_time": "2026-07-28T17:42:14Z",
-      "verification_source": "fxtwitter_status",
-      "freshness": "exact_status_only",
+      "verification_source": "jina_profile_status",
+      "freshness": "no_new_posts",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-09-01T01:04:30Z",
-      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach latest is not newer than stored 2082159711852298494; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina profile did not expose a realDonaldTrump status URL; Chrome unavailable; do not advance last_tweet_id without a newer timeline timestamp"
+      "checked_time": "2026-09-01T10:14:22Z",
+      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach latest is not newer than stored 2082159711852298494; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina profile/status confirmed the same top status 2082159711852298494 at 2026-07-28T17:42:14Z; Chrome unavailable; keep last_tweet_id unchanged unless a newer timeline timestamp appears"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
