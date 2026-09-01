@@ -1,3 +1,5 @@
+
+
 ```bash
 npx skills add yan-labs/trump-truthsocial-catalyst
 ```
@@ -78,7 +80,7 @@ freshness is still unverified. The fallback does not pretend to provide a
 complete historical timeline.
 
 It parses the newest items (clean text + timestamps + permalinks), dedupes by
-`status_id`, and runs each market-relevant post through a classification
+source id, and runs each market-relevant post through a classification
 checklist. Posts are sorted into a tiered pump playbook, ranked by reliability of
 an immediate up-move and annotated for durability:
 
