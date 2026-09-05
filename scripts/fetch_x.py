@@ -2,10 +2,11 @@
 """Fetch @realDonaldTrump from xreach, with bounded public fallbacks.
 
 The xreach bird connector can return a successful JSON response containing an
-old timeline.  When that happens, try an independent RSS-Bridge Atom timeline,
-then Jina Reader's public profile/status pages.  If all timeline views are
-stale or blocked, FxTwitter/VxTwitter can still verify the exact saved status,
-but that last check deliberately does not claim that the account is current.
+old timeline or fail authentication. When that happens, try an independent
+RSS-Bridge Atom timeline, then discover public status ids from the X profile
+and read their Jina status pages. If all timeline views are stale or blocked,
+FxTwitter/VxTwitter can still verify the exact saved status, but that last
+check deliberately does not claim that the account is current.
 """
 
 from __future__ import annotations
@@ -21,6 +22,11 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree
+
+try:
+    from .public_x_profile import fetch_public_posts
+except ImportError:  # pragma: no cover - supports direct script execution
+    from public_x_profile import fetch_public_posts
 
 
 ACCOUNT = "realDonaldTrump"
@@ -326,6 +332,18 @@ def fetch_exact_status(status_id: str) -> tuple[str, dict[str, Any]]:
     raise RuntimeError("; ".join(errors))
 
 
+def public_item_for_output(item: dict[str, Any]) -> dict[str, Any]:
+    """Keep public fallback rows compatible with the wrapper's legacy shape."""
+    output = dict(item)
+    author = item.get("author") if isinstance(item.get("author"), dict) else {}
+    output["user"] = {
+        "restId": str(author.get("id") or ACCOUNT_ID),
+        "screenName": str(author.get("screenName") or ACCOUNT),
+        "name": str(author.get("name") or "Donald J. Trump"),
+    }
+    return output
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--state", default="data/sync_state.json", help="sync_state.json path")
@@ -395,6 +413,39 @@ def main() -> int:
             return 0
     except (OSError, RuntimeError, ValueError, TimeoutError) as exc:
         fallback_errors.append(f"RSS-Bridge timeline failed: {exc}")
+
+    try:
+        public_items, public_diagnostic = fetch_public_posts(
+            ACCOUNT, ACCOUNT_ID, "Donald J. Trump", limit=12
+        )
+        public_items = [public_item_for_output(item) for item in sort_items(public_items)]
+        public_latest = public_items[0] if public_items else None
+        public_latest_time = item_time(public_latest or {})
+        public_is_new = bool(
+            public_latest_time
+            and (previous_time is None or public_latest_time > previous_time)
+        )
+        timeline_observations["x_public_profile"] = {
+            "status": "new_posts" if public_is_new else "stale",
+            "latest_id": (public_latest or {}).get("id"),
+            "latest_time": iso_time(public_latest_time),
+            "item_count": len(public_items),
+            "diagnostic": public_diagnostic,
+        }
+        if public_is_new:
+            output = {
+                "checked_time": checked_time,
+                "status": "available_fallback",
+                "source": "x_public_profile+jina_status",
+                "freshness": "new_posts",
+                "direct_warning": fallback_error,
+                "timeline_observations": timeline_observations,
+                "items": public_items,
+            }
+            print(json.dumps(output, ensure_ascii=False, indent=2))
+            return 0
+    except (OSError, RuntimeError, ValueError, TimeoutError) as exc:
+        fallback_errors.append(f"Public X profile/status failed: {exc}")
 
     try:
         profile_text = fetch_reader(PROFILE_READER_URL)

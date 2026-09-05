@@ -23,9 +23,9 @@ For every scheduled run:
 
 1. Fetch latest X posts with `python3 scripts/fetch_x.py --state
    data/sync_state.json > /tmp/trump_x.json`. The wrapper tries the direct
-   xreach timeline first, then RSS-Bridge's public Atom timeline, and then
-   Jina's public profile plus exact status page when the direct response is old
-   or unavailable.
+   xreach timeline first, then RSS-Bridge's public Atom timeline, then the
+   public `x.com/realDonaldTrump` profile plus Jina status pages. The latter is
+   a public-only fallback and does not read browser cookies or login state.
 2. Normalize each candidate as `x:<tweet_id>`.
 3. Cross-dedupe against Truth Social ledger rows using source id, normalized
    text, media/link context, and a 24-hour window.
@@ -37,13 +37,15 @@ For every scheduled run:
 ## Direct connector fallback
 
 The direct `xreach`/bird connector can return HTTP-successful JSON whose newest
-item is several weeks old. Do not call that current data. `fetch_x.py` uses an
-independent RSS-Bridge timeline and the exact Jina status page as bounded public
-fallbacks. FxTwitter/VxTwitter are used only to verify the saved status when
-the public timeline views are blocked:
+item is several weeks old, or can fail with an authentication error. Do not
+call that current data. `fetch_x.py` uses an independent RSS-Bridge timeline
+and the public X profile plus Jina status pages as bounded public fallbacks.
+FxTwitter/VxTwitter are used only to verify the saved status when the public
+timeline views are blocked:
 
 - `available`: direct xreach has a post newer than the saved observation;
-- `available_fallback`: RSS-Bridge or Jina verified a newer visible top status;
+- `available_fallback`: RSS-Bridge or the public-profile/Jina path verified a
+  newer visible status;
 - `verified_no_new_posts`: Jina verified that the visible top status is the
   same post and timestamp as the saved observation;
 - `stale_unverified` with `freshness: exact_status_only`: FxTwitter/VxTwitter

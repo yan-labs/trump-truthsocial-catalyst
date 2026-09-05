@@ -53,7 +53,8 @@ curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_fee
 
 # 0c. Fetch the latest @realDonaldTrump X posts.
 #     The wrapper rejects a successful-but-old xreach timeline and tries an
-#     RSS-Bridge Atom timeline, then Jina's profile/status fallback.
+#     RSS-Bridge Atom timeline, then the public X profile plus Jina status
+#     fallback. It does not require browser cookies or login state.
 python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
 ```
 
@@ -72,7 +73,8 @@ a fallback-only item must be logged, use `truthsocial:<platform_id>` plus its
 canonical Truth permalink and cross-dedupe it against a later
 `truth:<archive_id>` by normalized text and time.
 For X, `fetch_x.py` reports `available` for a fresh direct timeline,
-`available_fallback` for a newer post verified through RSS-Bridge or Jina,
+`available_fallback` for a newer post verified through RSS-Bridge or the public
+X profile/Jina path,
 `verified_no_new_posts` when Jina or an authenticated browser profile confirms
 that the visible top post has not changed, `stale_unverified` with
 `freshness: exact_status_only` when

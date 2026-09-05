@@ -17,8 +17,8 @@ It **live-fetches the newest posts on every use** from the public
 [trumpstruth.org](https://trumpstruth.org) RSS feed, cross-checks it against the
 independent [trump.fm Truth Social RSS feed](https://trump.fm/rss/truth.xml),
 and fetches `@realDonaldTrump` on X through `scripts/fetch_x.py`, which tries
-`xreach` first, then an RSS-Bridge Atom timeline and Jina profile/status
-fallbacks when the direct timeline is stale. If all public timelines are
+`xreach` first, then an RSS-Bridge Atom timeline and a public X profile/Jina
+status fallback when the direct timeline is stale or cannot authenticate. If all public timelines are
 blocked or stale, FxTwitter/VxTwitter verifies the saved status exactly without
 claiming that it is current. The official `truthsocial.com` API is
 Cloudflare-blocked from servers,

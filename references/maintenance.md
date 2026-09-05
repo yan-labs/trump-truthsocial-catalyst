@@ -18,11 +18,11 @@ cheap and append-only; don't rewrite history.
    archive with official Truth platform ids; use it to confirm freshness and as
    a fallback capture source. X is an official supplemental public channel and
    may be sparse, video-heavy, or repost-heavy. `scripts/fetch_x.py` first tries
-   xreach, then RSS-Bridge, then verifies the public profile's visible top
-   status and its exact published timestamp through Jina when the timelines are
-   old or unavailable. It can also verify the saved status through FxTwitter or
-   VxTwitter, but that result is exact-status-only and is not a current-feed
-   proof. Process only new `x:<tweet_id>` candidates; a
+   xreach, then RSS-Bridge, then discovers public status ids from the X profile
+   and reads their Jina status pages when the timelines are old or unavailable.
+   It can also verify the saved status through FxTwitter or VxTwitter, but that
+   result is exact-status-only and is not a current-feed proof. Process only
+   new `x:<tweet_id>` candidates; a
    `verified_no_new_posts` result is safe to record as a checked no-change,
    including a one-off authenticated browser profile check; this browser
    evidence is not an unattended dependency. `stale_unverified` still requires
