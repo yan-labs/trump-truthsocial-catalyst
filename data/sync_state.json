@@ -4,20 +4,20 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41476",
-  "last_update_time": "2026-09-01T22:55:26Z",
+  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41523",
+  "last_update_time": "2026-09-05T02:09:41Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-02T01:02:42Z",
+  "last_checked_time": "2026-09-05T04:01:26Z",
   "source_health": {
     "trumpstruth_rss": {
-      "status": "available",
-      "latest_archive_id": "41476",
-      "latest_post_time": "2026-09-01T22:55:26Z"
+      "status": "stale",
+      "latest_archive_id": "41523",
+      "latest_post_time": "2026-09-05T02:09:41Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117198246813661789",
-      "latest_post_time": "2026-09-01T22:55:26Z"
+      "latest_platform_id": "117216179932593008",
+      "latest_post_time": "2026-09-05T02:56:04Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
@@ -36,8 +36,8 @@
       "freshness": "exact_status_only",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-09-02T01:02:42Z",
-      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach latest is not newer than stored 2082159711852298494; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina profile did not expose a realDonaldTrump status URL; FxTwitter verified only the saved status 2082159711852298494 at 2026-07-28T17:42:14Z; Chrome unavailable; keep last_tweet_id unchanged unless a newer timeline timestamp appears"
+      "checked_time": "2026-09-05T04:01:26Z",
+      "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina profile did not expose a realDonaldTrump status URL; FxTwitter verified only the saved status 2082159711852298494 at 2026-07-28T17:42:14Z; Chrome unavailable; keep last_tweet_id unchanged and keep the primary Truth cursor at 41523 until the primary catches up with the newer alternate observation"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
