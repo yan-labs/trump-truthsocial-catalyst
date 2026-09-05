@@ -7,7 +7,7 @@
   "last_truth_social_id": "https://www.trumpstruth.org/statuses/41523",
   "last_update_time": "2026-09-05T02:09:41Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-05T04:17:30Z",
+  "last_checked_time": "2026-09-05T04:32:33Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "stale",
@@ -36,7 +36,7 @@
       "freshness": "no_new_posts",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-09-05T04:17:30Z",
+      "checked_time": "2026-09-05T04:32:33Z",
       "next_action": "Retry xreach, RSS-Bridge, Jina, and read-only Chrome profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); Jina profile/status confirmed the same top status 2082159711852298494 at 2026-07-28T17:42:14Z, so no new post was verified; Chrome unavailable; keep last_tweet_id unchanged and keep the primary Truth cursor at 41523 until the primary catches up with the newer alternate observation"
     }
   },
