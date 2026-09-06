@@ -4,20 +4,20 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41528",
-  "last_update_time": "2026-09-05T02:56:04Z",
+  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41530",
+  "last_update_time": "2026-09-06T00:24:30Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-05T05:09:27Z",
+  "last_checked_time": "2026-09-06T01:03:25Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41528",
-      "latest_post_time": "2026-09-05T02:56:04Z"
+      "latest_archive_id": "41530",
+      "latest_post_time": "2026-09-06T00:24:30Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117216179932593008",
-      "latest_post_time": "2026-09-05T02:56:04Z"
+      "latest_platform_id": "117221246252501141",
+      "latest_post_time": "2026-09-06T00:24:30Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
@@ -39,8 +39,8 @@
       "freshness": "no_new_posts",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-09-05T04:59:41Z",
-      "next_action": "Retry xreach, RSS-Bridge, public x.com profile plus Jina status, and Jina profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); public profile saw the same top status and Jina profile/status confirmed 2082159711852298494 at 2026-07-28T17:42:14Z, so no new post was verified; Chrome is not required for the unattended path; Truth RSS primary and alternate are both available through 2026-09-05T02:56:04Z but expose different platform ids for the newest RT, so dedupe by text/time before logging"
+      "checked_time": "2026-09-06T01:02:51Z",
+      "next_action": "Retry xreach, RSS-Bridge, public x.com profile plus Jina status, and Jina profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); public profile returned 5 candidate ids but 2 status pages belonged to another account, while Jina profile/status confirmed 2082159711852298494 at 2026-07-28T17:42:14Z, so no new post was verified; Chrome is not required for the unattended path; Truth RSS primary and alternate both reached 2026-09-06T00:24:30Z with matching Spain-border text, skip as no clear tradable market catalyst and keep X cursor unchanged"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
