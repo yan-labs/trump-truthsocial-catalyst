@@ -4,43 +4,43 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41530",
-  "last_update_time": "2026-09-06T00:24:30Z",
+  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41579",
+  "last_update_time": "2026-09-06T23:36:34Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-06T01:03:25Z",
+  "last_checked_time": "2026-09-07T01:01:03Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41530",
-      "latest_post_time": "2026-09-06T00:24:30Z"
+      "latest_archive_id": "41579",
+      "latest_post_time": "2026-09-06T23:36:34Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117221246252501141",
-      "latest_post_time": "2026-09-06T00:24:30Z"
+      "latest_platform_id": "117226720070374585",
+      "latest_post_time": "2026-09-06T23:36:34Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
       "checked_time": "2026-08-17T04:13:00Z"
     },
     "x_reach": {
-      "status": "verified_no_new_posts",
+      "status": "stale_unverified",
       "direct_status": "stale_unverified",
       "rss_bridge_status": "failed",
       "rss_bridge_latest_id": "2082159711852298494",
       "rss_bridge_latest_time": "2026-07-28T17:42:14Z",
-      "public_profile_status": "available_stale",
-      "public_profile_latest_id": "2082159711852298494",
-      "public_profile_latest_time": "2026-07-28T17:42:14Z",
+      "public_profile_status": "stale_unverified",
+      "public_profile_latest_id": null,
+      "public_profile_latest_time": null,
       "browser_status": "unavailable",
       "browser_latest_id": "2082159711852298494",
       "browser_latest_time": "2026-07-28T17:42:14Z",
-      "verification_source": "jina_profile_status",
-      "freshness": "no_new_posts",
+      "verification_source": "fxtwitter_status",
+      "freshness": "exact_status_only",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-09-06T01:02:51Z",
-      "next_action": "Retry xreach, RSS-Bridge, public x.com profile plus Jina status, and Jina profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); public profile returned 5 candidate ids but 2 status pages belonged to another account, while Jina profile/status confirmed 2082159711852298494 at 2026-07-28T17:42:14Z, so no new post was verified; Chrome is not required for the unattended path; Truth RSS primary and alternate both reached 2026-09-06T00:24:30Z with matching Spain-border text, skip as no clear tradable market catalyst and keep X cursor unchanged"
+      "checked_time": "2026-09-07T01:01:03Z",
+      "next_action": "Retry xreach, RSS-Bridge, public x.com profile plus Jina status, and Jina profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); public profile returned 5 candidate ids but all 5 status pages belonged to another account/status, Jina profile did not expose a realDonaldTrump status URL, and FxTwitter verified only saved status 2082159711852298494 at 2026-07-28T17:42:14Z, so X remains stale_unverified with no cursor advance; Chrome is not required for the unattended path; Truth RSS primary and alternate both reached 2026-09-06T23:36:34Z with matching latest New Mexico text, log only truth:41532 as a weak Canada/CAD macro catalyst and skip the other 48 political/media-only items"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
