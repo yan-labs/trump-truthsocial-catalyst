@@ -4,20 +4,20 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2082159711852298494",
-  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41579",
-  "last_update_time": "2026-09-06T23:36:34Z",
+  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41653",
+  "last_update_time": "2026-09-09T02:25:12Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-07T01:01:03Z",
+  "last_checked_time": "2026-09-09T04:26:07Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41579",
-      "latest_post_time": "2026-09-06T23:36:34Z"
+      "latest_archive_id": "41653",
+      "latest_post_time": "2026-09-09T02:25:12Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117226720070374585",
-      "latest_post_time": "2026-09-06T23:36:34Z"
+      "latest_platform_id": "117238707792033610",
+      "latest_post_time": "2026-09-09T02:25:12Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
@@ -39,8 +39,8 @@
       "freshness": "exact_status_only",
       "latest_returned_id": "2082159711852298494",
       "latest_returned_time": "2026-07-28T17:42:14Z",
-      "checked_time": "2026-09-07T01:01:03Z",
-      "next_action": "Retry xreach, RSS-Bridge, public x.com profile plus Jina status, and Jina profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); public profile returned 5 candidate ids but all 5 status pages belonged to another account/status, Jina profile did not expose a realDonaldTrump status URL, and FxTwitter verified only saved status 2082159711852298494 at 2026-07-28T17:42:14Z, so X remains stale_unverified with no cursor advance; Chrome is not required for the unattended path; Truth RSS primary and alternate both reached 2026-09-06T23:36:34Z with matching latest New Mexico text, log only truth:41532 as a weak Canada/CAD macro catalyst and skip the other 48 political/media-only items"
+      "checked_time": "2026-09-09T04:26:07Z",
+      "next_action": "Retry xreach, RSS-Bridge, public x.com profile plus Jina status, and Jina profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); public profile returned 5 candidate ids but all 5 status pages belonged to another account/status, Jina profile did not expose a realDonaldTrump status URL, and FxTwitter verified only saved status 2082159711852298494 at 2026-07-28T17:42:14Z, so X remains stale_unverified with no cursor advance; Chrome is not required for the unattended path; Truth RSS primary and alternate both reached 2026-09-09T02:25:12Z, log truth:41634, truth:41630, truth:41619, and truth:41599 as four weak market catalysts and skip the other 72 political/media-only or duplicate items"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
