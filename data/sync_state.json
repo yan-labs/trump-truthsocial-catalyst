@@ -4,20 +4,20 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2097805168708362377",
-  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41686",
-  "last_update_time": "2026-09-10T15:48:08Z",
+  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41694",
+  "last_update_time": "2026-09-11T20:40:32Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-11T01:01:34Z",
+  "last_checked_time": "2026-09-12T01:03:31Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41686",
-      "latest_post_time": "2026-09-10T15:48:08Z"
+      "latest_archive_id": "41694",
+      "latest_post_time": "2026-09-11T20:40:32Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117247527370149354",
-      "latest_post_time": "2026-09-10T15:48:08Z"
+      "latest_platform_id": "117254339474433741",
+      "latest_post_time": "2026-09-11T20:40:32Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
@@ -39,8 +39,8 @@
       "freshness": "exact_status_only",
       "latest_returned_id": "2097805168708362377",
       "latest_returned_time": "2026-09-09T21:51:42Z",
-      "checked_time": "2026-09-11T01:01:34Z",
-      "next_action": "Retry xreach, RSS-Bridge, public x.com profile plus Jina status, and Jina profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); public profile returned 5 candidate ids but all 5 status pages belonged to another account/status, so X remains stale_unverified with no cursor advance; FxTwitter verified only the saved status 2097805168708362377 at 2026-09-09T21:51:42Z; Truth RSS primary and alternate were available and aligned through archive 41686 at 2026-09-10T15:48:08Z, with 24 new-after-watermark items, one weak broadcast-media policy row logged and 23 political/media-only or duplicate items skipped"
+      "checked_time": "2026-09-12T01:03:31Z",
+      "next_action": "Retry xreach, RSS-Bridge, public x.com profile plus Jina status, and Jina profile next tick; xreach failed (1): GraphQL Error: Could not authenticate you; RSS-Bridge returned invalid Atom (mismatched tag: line 12, column 2); public profile returned 5 candidate ids but all 5 Jina status fetches failed with curl SSL_ERROR_SYSCALL, so X remains stale_unverified with no cursor advance; FxTwitter verified only the saved status 2097805168708362377 at 2026-09-09T21:51:42Z; Truth RSS primary and alternate were available and aligned through archive 41694 / platform 117254339474433741 at 2026-09-11T20:40:32Z, with 8 new-after-watermark items, one weak $5,000 dividend macro row logged and 7 political/media-only or duplicate items skipped"
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
