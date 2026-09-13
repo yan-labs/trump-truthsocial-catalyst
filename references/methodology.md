@@ -129,8 +129,8 @@ For each fresh post, answer in order — stop early if it's not market-relevant:
 ### Truth Social via trumpstruth.org RSS
 
 ```bash
-curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
-curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
+curl -sS --fail-with-body --retry 2 --retry-delay 1 --retry-connrefused -A "Mozilla/5.0" "https://www.trumpstruth.org/feed" -o /tmp/trump_feed.xml
+curl -sS --fail-with-body --retry 2 --retry-delay 1 --retry-connrefused -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
 ```
 
 ```python
@@ -186,9 +186,10 @@ python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
 
 `fetch_x.py` tries `xreach tweets` first. A successful response is not treated
 as fresh when its newest timestamp is at or before the saved X observation. It
-then tries an independent RSS-Bridge Atom timeline, followed by the public
-profile and exact top-status page through Jina Reader. If those timeline views
-are blocked, FxTwitter/VxTwitter can verify the saved status id, timestamp, and
+then tries an independent RSS-Bridge Atom timeline, followed by exact status
+data embedded in the public X profile HTML; Jina Reader is used only for
+profile rows the HTML does not expose. If those timeline views are blocked,
+FxTwitter/VxTwitter can verify the saved status id, timestamp, and
 text, but cannot prove that no newer post exists. The output keeps the normal
 `items` list and adds a source status: `available`, `available_fallback`,
 `verified_no_new_posts`, or `stale_unverified`; the latter may carry
@@ -218,8 +219,10 @@ for t in items or []:
 X-specific caveats:
 - Treat X as an official supplemental channel, not a replacement for Truth
   Social. It can be sparse and may contain video-only links or retweets.
-- RSS-Bridge and Jina verify only a visible/top timeline observation; they are
-  freshness/latest-post fallbacks, not a complete timeline backfill.
+- RSS-Bridge, the public profile HTML, and Jina verify only a bounded visible/top
+  timeline observation; they are freshness/latest-post fallbacks, not a complete
+  timeline backfill. The profile HTML can provide exact ids, text, and
+  `created_at_ms` without browser login state.
 - FxTwitter/VxTwitter exact-status responses verify only the known saved post;
   keep them `exact_status_only` and do not use them to advance a cursor.
 - Keep the direct xreach result's connector warning when the fallback verifies

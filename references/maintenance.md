@@ -8,18 +8,22 @@ cheap and append-only; don't rewrite history.
 
 1. **Fetch** the latest posts (Step 0):
    ```bash
-   curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
-   curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
+   curl -sS --fail-with-body --retry 2 --retry-delay 1 --retry-connrefused -A "Mozilla/5.0" "https://www.trumpstruth.org/feed" -o /tmp/trump_feed.xml
+   curl -sS --fail-with-body --retry 2 --retry-delay 1 --retry-connrefused -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
    python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
    ```
+   Use curl retries and `--fail-with-body` for both RSS requests; a
+   successful HTTP response still must be parsed as XML and compared by
+   publication time.
    Parse both Truth feeds with the recipes in `methodology.md`. The
    `trumpstruth.org` feed is the primary ledger source and its numeric archive
    ids remain canonical. `trump.fm/rss/truth.xml` is an independent public
    archive with official Truth platform ids; use it to confirm freshness and as
    a fallback capture source. X is an official supplemental public channel and
    may be sparse, video-heavy, or repost-heavy. `scripts/fetch_x.py` first tries
-   xreach, then RSS-Bridge, then discovers public status ids from the X profile
-   and reads their Jina status pages when the timelines are old or unavailable.
+   xreach, then RSS-Bridge, then parses exact ids, text, and `created_at_ms`
+   from the public X profile HTML and uses Jina status pages only for profile
+   rows it cannot parse when the timelines are old or unavailable.
    It can also verify the saved status through FxTwitter or VxTwitter, but that
    result is exact-status-only and is not a current-feed proof. Process only
    new `x:<tweet_id>` candidates; a
@@ -48,6 +52,10 @@ cheap and append-only; don't rewrite history.
      for `verified_no_new_posts` or `exact_status_only`; use `source`,
      `freshness`, and `latest_returned_time` to record what was actually
      verified.
+   - A public profile HTML response with the target account's exact top status
+     id and `created_at_ms` is acceptable public freshness evidence; record
+     `verification_source: x_public_profile_html` and preserve the xreach
+     warning when the connector is unauthenticated.
 
 2. **Dedupe by source id** against the live ledger in `track-record.md`: use
    `truth:<status_id>` for primary Truth items, `truthsocial:<platform_id>` for

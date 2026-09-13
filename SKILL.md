@@ -45,16 +45,17 @@ skills update trump-truthsocial-catalyst -y
 # 0b. Fetch the primary Truth Social archive: text + timestamps + permalinks.
 #     trumpstruth.org is a third-party archive; keep its numeric archive ids as
 #     the canonical ids for the existing ledger.
-curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
+curl -sS --fail-with-body --retry 2 --retry-delay 1 --retry-connrefused -A "Mozilla/5.0" "https://www.trumpstruth.org/feed" -o /tmp/trump_feed.xml
 
 # 0b-alt. Fetch an independent Truth Social archive for freshness checks and
 #        fallback when the primary archive is unavailable.
-curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
+curl -sS --fail-with-body --retry 2 --retry-delay 1 --retry-connrefused -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
 
 # 0c. Fetch the latest @realDonaldTrump X posts.
 #     The wrapper rejects a successful-but-old xreach timeline and tries an
-#     RSS-Bridge Atom timeline, then the public X profile plus Jina status
-#     fallback. It does not require browser cookies or login state.
+#     RSS-Bridge Atom timeline, then parses exact ids, text, and created_at_ms
+#     from the public X profile HTML and uses Jina only for profile gaps. It
+#     does not require browser cookies or login state.
 python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
 ```
 
@@ -74,8 +75,8 @@ canonical Truth permalink and cross-dedupe it against a later
 `truth:<archive_id>` by normalized text and time.
 For X, `fetch_x.py` reports `available` for a fresh direct timeline,
 `available_fallback` for a newer post verified through RSS-Bridge or the public
-X profile/Jina path,
-`verified_no_new_posts` when Jina or an authenticated browser profile confirms
+X profile HTML/Jina path,
+`verified_no_new_posts` when the public profile HTML, Jina, or an authenticated browser profile confirms
 that the visible top post has not changed, `stale_unverified` with
 `freshness: exact_status_only` when
 FxTwitter/VxTwitter can only re-check the saved status, and plain

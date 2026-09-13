@@ -14,11 +14,12 @@ holdings** as short-term US-stock catalysts: which names or sectors are likely
 to pop, and an honest read on *how reliably* each pattern actually does.
 
 It **live-fetches the newest posts on every use** from the public
-[trumpstruth.org](https://trumpstruth.org) RSS feed, cross-checks it against the
+[trumpstruth.org](https://www.trumpstruth.org) RSS feed, cross-checks it against the
 independent [trump.fm Truth Social RSS feed](https://trump.fm/rss/truth.xml),
 and fetches `@realDonaldTrump` on X through `scripts/fetch_x.py`, which tries
-`xreach` first, then an RSS-Bridge Atom timeline and a public X profile/Jina
-status fallback when the direct timeline is stale or cannot authenticate. If all public timelines are
+`xreach` first, then an RSS-Bridge Atom timeline, parses exact status data
+from the public X profile HTML, and uses Jina only for profile gaps when the
+direct timeline is stale or cannot authenticate. If all public timelines are
 blocked or stale, FxTwitter/VxTwitter verifies the saved status exactly without
 claiming that it is current. The official `truthsocial.com` API is
 Cloudflare-blocked from servers,
@@ -66,8 +67,8 @@ market-moving one can be minutes old, so the skill fetches live before doing
 anything else:
 
 ```bash
-curl -sS -A "Mozilla/5.0" "https://trumpstruth.org/feed" -o /tmp/trump_feed.xml
-curl -sS -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
+curl -sS --fail-with-body --retry 2 --retry-delay 1 --retry-connrefused -A "Mozilla/5.0" "https://www.trumpstruth.org/feed" -o /tmp/trump_feed.xml
+curl -sS --fail-with-body --retry 2 --retry-delay 1 --retry-connrefused -A "Mozilla/5.0" "https://trump.fm/rss/truth.xml" -o /tmp/trump_alt_feed.xml
 python3 scripts/fetch_x.py --state data/sync_state.json > /tmp/trump_x.json
 ```
 

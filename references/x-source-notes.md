@@ -24,8 +24,9 @@ For every scheduled run:
 1. Fetch latest X posts with `python3 scripts/fetch_x.py --state
    data/sync_state.json > /tmp/trump_x.json`. The wrapper tries the direct
    xreach timeline first, then RSS-Bridge's public Atom timeline, then the
-   public `x.com/realDonaldTrump` profile plus Jina status pages. The latter is
-   a public-only fallback and does not read browser cookies or login state.
+   public `x.com/realDonaldTrump` profile HTML. It parses exact status ids,
+   text, and `created_at_ms` without browser cookies or login state; Jina status
+   pages are used only for profile rows the HTML cannot parse.
 2. Normalize each candidate as `x:<tweet_id>`.
 3. Cross-dedupe against Truth Social ledger rows using source id, normalized
    text, media/link context, and a 24-hour window.
@@ -39,14 +40,16 @@ For every scheduled run:
 The direct `xreach`/bird connector can return HTTP-successful JSON whose newest
 item is several weeks old, or can fail with an authentication error. Do not
 call that current data. `fetch_x.py` uses an independent RSS-Bridge timeline
-and the public X profile plus Jina status pages as bounded public fallbacks.
+and the public X profile HTML plus Jina status pages as bounded public fallbacks.
+The profile HTML is preferred because it can expose exact ids, text, and
+`created_at_ms` without login state; Jina fills only profile gaps.
 FxTwitter/VxTwitter are used only to verify the saved status when the public
 timeline views are blocked:
 
 - `available`: direct xreach has a post newer than the saved observation;
-- `available_fallback`: RSS-Bridge or the public-profile/Jina path verified a
+- `available_fallback`: RSS-Bridge or the public-profile HTML/Jina path verified a
   newer visible status;
-- `verified_no_new_posts`: Jina verified that the visible top status is the
+- `verified_no_new_posts`: the public profile HTML or Jina verified that the visible top status is the
   same post and timestamp as the saved observation;
 - `stale_unverified` with `freshness: exact_status_only`: FxTwitter/VxTwitter
   verified the saved id and timestamp, but no current timeline was established;
@@ -103,6 +106,7 @@ Initial partial backfill, captured with `xreach tweets @realdonaldtrump --json
 | `x:2073607119878623432` | Newest X item in this run was visible only as a `t.co` short link. No text, media caption, or independently verified market context was available, so it was not scored. |
 | `x:2057968277062582378` | Latest captured X post was visible text `t.co` plus video media. Content was not resolved, so do not score. |
 | `x:2028505632123326484` | Visible text only a short link plus video media. Market context unverified. |
+| `x:2098220766491787550`, `x:2098610332432322827`, `x:2098610578855977065`, `x:2098610807877595502` | 2026-09-11 to 2026-09-12: exact ids, timestamps, and short-link text were captured from public profile HTML; video/link context was not independently resolved, so no prediction rows were added. |
 | GOTV / campaign endorsements / personal attacks | No clear ticker, sector, or policy lever. Usually outside this skill's market ledger. |
 | Pure short-link or pure video posts | Keep as source notes unless a reliable transcript, expanded link, or independent summary verifies market context. |
 

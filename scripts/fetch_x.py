@@ -125,7 +125,11 @@ def run_xreach() -> tuple[list[dict[str, Any]], str | None]:
 
 def fetch_reader(url: str) -> str:
     result = subprocess.run(
-        ["curl", "-L", "-sS", "--max-time", "35", "-A", "Mozilla/5.0", url],
+        [
+            "curl", "-L", "-sS", "--fail-with-body", "--retry", "2",
+            "--retry-delay", "1", "--retry-connrefused", "--connect-timeout",
+            "10", "--max-time", "35", "-A", "Mozilla/5.0", url,
+        ],
         capture_output=True,
         text=True,
         timeout=40,
@@ -425,8 +429,17 @@ def main() -> int:
             public_latest_time
             and (previous_time is None or public_latest_time > previous_time)
         )
+        public_same = bool(
+            public_latest
+            and previous_id
+            and public_latest.get("id") == previous_id
+            and public_latest_time
+            and previous_time
+            and public_latest_time == previous_time
+            and public_diagnostic.get("verification_source") == "x_public_profile_html"
+        )
         timeline_observations["x_public_profile"] = {
-            "status": "new_posts" if public_is_new else "stale",
+            "status": "new_posts" if public_is_new else ("verified_no_new_posts" if public_same else "stale"),
             "latest_id": (public_latest or {}).get("id"),
             "latest_time": iso_time(public_latest_time),
             "item_count": len(public_items),
@@ -436,11 +449,24 @@ def main() -> int:
             output = {
                 "checked_time": checked_time,
                 "status": "available_fallback",
-                "source": "x_public_profile+jina_status",
+                "source": public_diagnostic.get("source", "x_public_profile+jina_status"),
                 "freshness": "new_posts",
                 "direct_warning": fallback_error,
                 "timeline_observations": timeline_observations,
                 "items": public_items,
+            }
+            print(json.dumps(output, ensure_ascii=False, indent=2))
+            return 0
+        if public_same:
+            output = {
+                "checked_time": checked_time,
+                "status": "verified_no_new_posts",
+                "source": "x_public_profile_html",
+                "freshness": "no_new_posts",
+                "verification_source": "x_public_profile_html",
+                "direct_warning": fallback_error,
+                "timeline_observations": timeline_observations,
+                "items": [public_latest],
             }
             print(json.dumps(output, ensure_ascii=False, indent=2))
             return 0
