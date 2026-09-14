@@ -56,6 +56,9 @@ cheap and append-only; don't rewrite history.
      id and `created_at_ms` is acceptable public freshness evidence; record
      `verification_source: x_public_profile_html` and preserve the xreach
      warning when the connector is unauthenticated.
+   - The profile parser follows each status-specific RSC `Tweet` object and its
+     `user_results` reference, and prefers the linked full `NoteTweet` text;
+     never take the first `full_text` found in a shared response window.
 
 2. **Dedupe by source id** against the live ledger in `track-record.md`: use
    `truth:<status_id>` for primary Truth items, `truthsocial:<platform_id>` for

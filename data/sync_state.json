@@ -7,7 +7,7 @@
   "last_truth_social_id": "https://www.trumpstruth.org/statuses/41708",
   "last_update_time": "2026-09-13T23:56:01Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-14T01:06:05Z",
+  "last_checked_time": "2026-09-14T01:50:32Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "stale",
@@ -43,7 +43,7 @@
       "latest_returned_id": "2098610807877595502",
       "latest_returned_time": "2026-09-12T03:13:01Z",
       "public_profile_parsed_count": 5,
-      "checked_time": "2026-09-14T01:06:05Z",
+      "checked_time": "2026-09-14T01:50:32Z",
       "next_action": "xreach failed with GraphQL authentication error; RSS-Bridge returned invalid Atom and was not treated as fresh; public x.com profile HTML returned 5 exact rows and confirmed the saved top status 2098610807877595502 at 2026-09-12T03:13:01Z, so X is verified_no_new_posts without advancing the cursor or using browser cookies. Truth primary www endpoint was valid XML through archive 41708 at 2026-09-13T23:56:01Z but is stale relative to trump.fm, whose valid XML is ahead through platform 117266645297015166 at 2026-09-14T00:50:04Z; the numeric primary cursor advanced only to verified archive 41708, and the alternate-only item is preserved by id/permalink/time. Retry both RSS feeds, xreach, RSS-Bridge, and public profile HTML next tick; use Jina only for profile gaps."
     }
   },
