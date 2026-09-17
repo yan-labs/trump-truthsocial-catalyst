@@ -4,23 +4,23 @@
   "repo": "yan-labs/trump-truthsocial-catalyst",
   "skill_dir": ".",
   "last_tweet_id": "2098610807877595502",
-  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41745",
-  "last_update_time": "2026-09-15T19:11:57Z",
+  "last_truth_social_id": "https://www.trumpstruth.org/statuses/41753",
+  "last_update_time": "2026-09-16T22:49:03Z",
   "cursor_mode": "pubDate_watermark",
-  "last_checked_time": "2026-09-16T01:05:12Z",
+  "last_checked_time": "2026-09-17T01:03:48Z",
   "source_health": {
     "trumpstruth_rss": {
       "status": "available",
-      "latest_archive_id": "41745",
-      "latest_post_time": "2026-09-15T19:11:57Z"
+      "latest_archive_id": "41753",
+      "latest_post_time": "2026-09-16T22:49:03Z"
     },
     "trumpfm_truth_rss": {
       "status": "available",
-      "latest_platform_id": "117276640394053011",
-      "latest_post_time": "2026-09-15T19:11:57Z",
-      "alternate_only_latest_id": "truthsocial:117276640394053011",
-      "alternate_only_latest_permalink": "https://truthsocial.com/@realDonaldTrump/117276640394053011",
-      "alternate_only_latest_time": "2026-09-15T19:11:57Z"
+      "latest_platform_id": "117283156339074391",
+      "latest_post_time": "2026-09-16T22:49:03Z",
+      "alternate_only_latest_id": "truthsocial:117283156339074391",
+      "alternate_only_latest_permalink": "https://truthsocial.com/@realDonaldTrump/117283156339074391",
+      "alternate_only_latest_time": "2026-09-16T22:49:03Z"
     },
     "official_truthsocial": {
       "status": "blocked_cloudflare",
@@ -43,8 +43,8 @@
       "latest_returned_id": "2098610807877595502",
       "latest_returned_time": "2026-09-12T03:13:01Z",
       "public_profile_parsed_count": 5,
-      "checked_time": "2026-09-16T01:05:12Z",
-      "next_action": "xreach failed with GraphQL authentication error; RSS-Bridge returned invalid Atom and was not treated as fresh; public x.com profile HTML returned 5 exact rows and confirmed the saved top status 2098610807877595502 at 2026-09-12T03:13:01Z, so X is verified_no_new_posts without advancing the cursor or using browser cookies. Both public Truth feeds returned valid XML and agree on the newest publication time through primary archive 41745 / alternate platform 117276640394053011 at 2026-09-15T19:11:57Z; the primary cursor advanced by publication watermark and the alternate platform id is preserved by id/permalink/time. Sixteen primary items followed the prior watermark; one market-relevant legal/tariff item was logged and fifteen empty, RT-only, political, personal, or promotional items were skipped. Retry both RSS feeds, xreach, RSS-Bridge, and public profile HTML next tick; use Jina only for profile gaps and never advance an X cursor from exact-status-only evidence."
+      "checked_time": "2026-09-17T01:03:48Z",
+      "next_action": "xreach failed with GraphQL authentication error; RSS-Bridge returned invalid Atom and was not treated as fresh; public x.com profile HTML returned 5 exact rows and confirmed the saved top status 2098610807877595502 at 2026-09-12T03:13:01Z, so X is verified_no_new_posts without advancing the cursor or using browser cookies. Both public Truth feeds returned valid XML and agree on the newest publication time through primary archive 41753 / alternate platform 117283156339074391 at 2026-09-16T22:49:03Z; the primary cursor advanced by publication watermark and the alternate platform id is preserved by id/permalink/time. Seven primary items followed the prior watermark; one macro/rates item was logged and six empty, RT-only, link-only, political, or media items were skipped. Retry both RSS feeds, xreach, RSS-Bridge, and public profile HTML next tick; use Jina only for profile gaps and never advance an X cursor from exact-status-only evidence."
     }
   },
   "note": "Managed by Codex heartbeat automation. Do not edit manually."
